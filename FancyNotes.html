@@ -1,0 +1,2681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kaoru's Fancy WebDev Notes</title>
+<meta name="author" content="Kaoru Kohashigawa">
+<meta name="description" content="My notes on HTML5, CSS3, Javascript and beyond displayed in an athestic way.">
+
+<link href="css/fancyNotes.css" rel="stylesheet">
+<script src="../js/jquery-1.10.0.min.js"></script>
+<script src="../js/jquery.easing.min.js"></script>
+<script src="js/fancyNotes.js"></script>
+
+</head>
+<body>
+
+<div id="shadowBox"><div id="disableBox"></div><div id="detailBox"></div></div>
+
+
+<article id="HTML5">
+<div class="headline"><header><h1>HTML5</h1></header></div>
+<!----------------------START OF SECTIONS---------------------------->   
+<section>
+    <h2>Start HTML5!</h2>
+    <div class="cover">How to start every single HTML5 document.</div>
+    
+    <div class="details">Along with making sure your file ends with <strong>.html</strong> (i.e. myfile.html) you also need to declare the document an HTML5 document.
+    
+    <code><em>&lt;!doctype html&gt;<br>&lt;html lang="en"&gt;</em></code>
+    
+    &lt;!doctype html&gt; - declares the document an html5 document.<br>
+    &lt;html lang="en"&gt; - declares that the document will written in English.<br><br>
+        
+    Along with a head, body and meta tags this is all you'll need to start a html5 doc.
+    <br>Resource:<ul><li><a href="http://htmldog.com/guides/html/beginner/tags/" title="htmlDog for beginners!">HtmlDog - Tags, Attributes, and Elements</a></li>
+    </div>
+</section>
+    
+    
+    
+    <section>
+    	<h2>Tag Attributes</h2><div class="cover">Add additional info with tag attributes!</div>
+          <div class="details">Tags can have added information with attributes. Not sure exactly how to utilize them yet, but I'm sure I will learn eventually =)<code>&lt;p <em>attribute=&quot;value&quot;</em>&gt;</code>
+		<br>Resource:<ul><li><a href="http://htmldog.com/guides/html/beginner/tags/" title="htmlDog for beginners!">HtmlDog - Tags, Attributes, and Elements</a></li></div>
+    </section>
+    
+    
+    <section>
+    	<h2>Head &amp; Title</h2><div class="cover">See what goes in the head section of every html document!</div>
+        <div class="details"><em>Meta, title, link and script</em> tags belong in the head section. This is where you load external files and add "behind the scenes" information such as meta tags.<code><em>&lt;head&gt;</em><br>&lt;title&gt; This is the title of your page &lt;title&gt;<br><em>&lt;/head&gt;</em></code>BONUS! Use title tags to declare the title of your page! Definitely a must!
+        <br><br>Resources:<ul><li><a href="http://htmldog.com/guides/html/beginner/titles/" title="htmlDog - Page titles for beginners!">HtmlDog - Head &amp; Title tags</a></li></ul>
+    </section>
+    
+    
+    <section>
+    	<h2>Meta Tags</h2><div class="cover">Types of Meta tags.</div>
+        <div class="details">Meta tags are served to help index pages. The most popular use WAS for keywording but because people abused it now it's really more about content. What is important is author, description, and charset (at least from what I've seen). <strong>Author:</strong> will give the page some authority as well as creating links back to your own page. <br><br><strong>Description:</strong> will pop-up under the link in a Google search. It is advised to start and use "keywords" in your description (reference: wedding wire) Pick up to 5.<code><em>&lt;meta name="description" content="whatever your page is about"&gt;</em></code><strong>charset</strong> is always set to utf-8 unless you are writing in a different language with special characters.<code><em>&lt;meta charset=&quot;utf-8&quot;&gt;</em></code><br>Resources:<ul><li><a href="http://htmldog.com/guides/html/intermediate/metatags/" title="htmlDog - Meta Tags">HtmlDog - Meta Tags</a></li></ul></div>   
+    </section>
+    
+    
+    <section>
+    	<h2>Forms + Input</h2><div class="cover">Create forms to accept input from your users.</div>
+        <div class="details">To start a form:
+        <code><em>&lt;form action="processingPhp.php" method="post"&gt;</em></code>
+        The action attribute points to the PHP scrip that will deal with the values coming in from the input form. There are two methods, POST and GET. In a form we will use POST. Not sure why.<br><br>
+        
+        There are all sorts of attritubes for input tags to help organize your form.
+        <code> <em>name</em> = an attribute necessary for PHP documents to read value of element.<br><br>
+		<em>type</em> = most important attribute in that it tells the browswer what to expect.</code> The following are accepted:<br>
+  		<table id="inputTable">
+        	<thead>
+       	  <th>HTML</th>
+                <th>Code</th>
+                <th>notes</th>
+            </thead>
+            <tr>
+            	<td><input type="text"></td>
+            	<td>text</td>
+                <td>default text type</td>
+            </tr>
+             <tr>
+            	<td><textarea rows="3"></textarea></td>
+            	<td>text area</td>
+                <td>Use the "rows" attribute to set how many lines there will be.. Also remember to set overflow:auto.</td>
+            </tr>
+            <tr>
+            	<td><input type="date"></td>
+            	<td>date</td>
+                <td>default</td>
+            </tr>
+            <tr>
+            	<td><input type="email"></td>
+            	<td>email</td>
+                <td>- will throw an error if there is no @ symbol. But still want to use js to confirm it.</td>
+            </tr>
+            <tr>
+            	<td><input type="file"></td>
+            	<td>file</td>
+                <td>upload a file from user's computer</td>
+            </tr>
+            <tr>
+            	<td><input type="image"></td>
+            	<td>image</td>
+                <td>defines an image as a submit button</td>
+            </tr>
+            <tr>
+            	<td><input type="month"></td>
+            	<td>month</td>
+                <td>Defines a month and year control (no time zone)</td>
+            </tr>
+            <tr>
+            	<td><input type="number"></td>
+            	<td>number</td>
+                <td>Number field</td>
+            </tr>
+            <tr>
+            	<td><input type="password"></td>
+            	<td>password</td>
+                <td>field will censor characters automatically</td>
+            </tr>
+            <tr>
+            	<td><input type="radio"><input type="checkbox"></td>
+            	<td>radio / checkbox</td>
+                <td>For radio buttons, you need to place them in a group so that when one is pressed </td>
+            </tr>
+            <tr>
+            	<td><input type="range"></td>
+            	<td>range</td>
+                <td>displays a slider where a acurate number is not important</td>
+            </tr>
+            <tr>
+            	<td><input type="reset"></td>
+            	<td>reset</td>
+                <td>clear form</td>
+            </tr>
+            <tr>
+            	<td><input type="search"></td>
+            	<td>search</td>
+                <td>text field for entering search string</td>
+            </tr>
+            <tr>
+            	<td><input type="submit"></td>
+            	<td>submit</td>
+                <td>submit form</td>
+            </tr>
+            <tr>
+            	<td><input type="tel"></td>
+            	<td>Telephone</td>
+                <td>defines a field for entering telephone numbers</td>
+            </tr>
+            <tr>
+            	<td><input type="url"></td>
+            	<td>url</td>
+                <td>defines a text field for entering URLS</td>
+            </tr>
+            <tr>
+            	<td><select><option>1</option><option>2</option></select></td>
+            	<td>&lt;select&gt;&lt;option&gt;1...</td>
+                <td>Gives a drop-down menu of "options"</td>
+            </tr>
+        </table>
+        <code><em>value</em> = can be used to specify initial value. Must be used for check box and radio. Should not be used for type="file"<br><br>
+        <em>checked</em> = can be used when type is set to checkbox and radio.<br><br>
+        <em>maxlength</em> = can be used to specify the maximum number of characters allowed in a text box.<br><br>
+        <em>src / alt</em> = when type is set to image.<br><br>
+        <em>accept</em> = when type is set to file, list of file-types that can be accepted. MIME types.<br><br>
+        <em>disabled</em> = disable an element. disabled="disabled"<br><br>
+        <em>tabindex</em> = can be used to specify where the lement appears in the tab order of the page
+		
+        </code><br>
+        Resource:<br>
+        <ul><li><a href="http://htmldog.com/guides/html/beginner/forms/" title="htmlDog forms and input tags">HtmlDog - Forms and input</a></li></ul>
+        
+        </div>
+    </section>
+    
+    
+    
+    <section>
+    	<h2>Abbr, Quotes and Code</h2><div class="cover">Explaination of semantic tags: abbreviations, quotations, code.</div>
+        <div class="details"><strong>Abbreviations</strong>: My guess it would help to have abbreviations tags in a page for SEO purposes + for those who are blind
+        <code><em>&lt;abbr title="Department of Transportation"&gt;</em>DOT<em>&lt;/abbr&gt;</em></code>
+        <strong>Quotes</strong>: There are two types:<br>
+		<code><em>&lt;blockquote&gt;</em> My Quote <em>&lt;/blockquote&gt;</em> - it's display is set to "block" thus it will break out of the parent block to form it's own unless otherwise styled in CSS.<br><br>
+        <em>&lt;q&gt;</em> To be <em>&lt;/q&gt;</em> - used for inline quotes.<br><br>
+        &lt;q <em>cite</em> &gt; the cite attribute is used to cite your source of reference.</code>
+        <strong>Code</strong>: is used to show a block of text that is meant to be code. HTML documents automatically set the font to monospace.
+        <code><em>&lt;code&gt;</em> Place code here <em>&lt;/code&gt;</em></code>
+        Resource:<ul><li><a href="http://htmldog.com/guides/html/intermediate/text/" title="htmlDog - Text:Abbreviations, Quotations, and Code">HtmlDog - Text: Abbreviations, Quotations, and Code</a></li></ul>
+        </div>
+	</section>
+    
+    
+    
+    <section>
+    	<h2>Tables</h2><div class="cover">All there is to know about tables!</div>
+        <div class="details">
+        Tables are easy to create once you understand the tags. Every table needs to begin with a &lt;table&gt; tag. Next we need to decide how many cells our table will have. Say we need 3 rows and 2 columns. HTML tables are written like so: row-column-column-column-row-column-column-column...etc thus for our table our code would look like:
+        <code><em>&lt;table&gt;<br>
+        	&lt;tr&gt;<br>
+            	&nbsp;&lt;td&gt;&lt;/td&gt;<br>
+                &nbsp;&lt;td&gt;&lt;/td&gt;<br>
+                &nbsp;&lt;td&gt;&lt;/td&gt;<br>
+			&lt;/tr&gt;<br>
+            &lt;tr&gt;<br>
+            	&nbsp;&lt;td&gt;&lt;/td&gt;<br>
+                &nbsp;&lt;td&gt;&lt;/td&gt;<br>
+                &nbsp;&lt;td&gt;&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+         	&lt;/table&gt;</em></code>
+            
+        It can be a bit deceiving because by default the table does not have any borders. You'll also want to set border-collapse: collapse so that the borders for each cell line up to it's neighbor. Stupid right? So you probably guess it correctly, <strong>tr</strong> stands for table row and <strong>td</strong> stands for table division (or column in my head). But wait there's more!<br><br>
+        
+        <strong>colspan and rowspan</strong>: will join a "n" number of columns or rows respectively. These are key if there is no data being presented in neighboring cells.
+        <code>&lt;td <em>rowspan="2"</em> &gt; - will join two rows together. Which means you'll have to skip the next one.</code>
+        It's best to draw out a table before coding. Remember plan then code and not design while coding.<br><br>
+        
+        <table style="border-collapse: collapse;">
+        	<tr>
+            	<th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+            <tr>
+            	<td>Cell 1</td>
+                <td colspan="2">Cell 2 & 3 colSpan</td>
+<!---This cell is mia because it is joined with cell to the left -->
+            </tr>
+            <tr >
+            	<td rowspan="2">Cell 4 & 7 rowSpan</td>
+                <td>Cell 5</td>
+                <td>Cell 6</td>
+            </tr>
+            <tr>
+            	<!---This cell is mia because it is joined with cell above-->
+                <td>Cell 8</td>
+                <td>Cell 9</td>                
+            </tr>
+       </table>
+       <br>
+       ***NOTE: both rowspan and colspan are attributes of the td tag.<br>
+       <strong>&lt;colgroup&gt;</strong> instead of giving each td a special class we can give the entire column a class.
+       <code>&lt;colgroup&gt;<br>&nbsp;&lt;col&gt;<br>&nbsp;<em>&lt;col class="special"&gt;</em><br>&lt;/colgroup&gt;</code>
+       We can also apply the span attribute to the &lt;col&gt; tags to style 2 or columns similarlly.
+       <code>&lt;colgroup&gt;<br>&nbsp;&lt;col&gt;<br>&nbsp;&lt;col <em>span="2"</em> class="special"&gt;<br>&lt;/colgroup&gt;</code>
+       The 2nd and 3rd column will be styled by the class special.
+      <br><br>
+      
+      <strong>Table Headers and footers ( &lt;thead&gt; &amp; &lt;tfoot&gt; )</strong>: gives you the ability to set a header and footer row. The footer row can actually go before the rest of the table body.
+      <code>&lt;table&gt;<br>
+      <em>&nbsp;&lt;thead&gt;</em><br>
+      &nbsp;&nbsp;&lt;tr&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;<em>th</em>&gt;Header 1&lt;<em>/td</em>&gt;<br>
+      &nbsp;&nbsp;&lt;/tr&gt;<br>
+      <em>&nbsp;&lt;/thead&gt;</em><br>
+      
+      <em>&nbsp;&lt;tfoot&gt;</em><br>
+      &nbsp;&nbsp;&lt;tr&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;td&gt;footer 1&lt;/td&gt;<br>
+      &nbsp;&nbsp;&lt;/tr&gt;<br>
+      <em>&nbsp;&lt;/tfoot&gt;</em><br>
+      
+      <em>&lt;tbody&gt;</em><br>
+      &nbsp;&nbsp;&lt;tr&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;td&gt;beginning of table body&lt;/td&gt;</code>
+      
+      <strong>Note</strong> how although thead, tfoot, tbody are tags we still need the tr tag. We can also have more than one header and footer in a table so long as there is a body to go with it.<br><br>
+      <strong>Note</strong> the cells in the table header are different in that instead of a td tag, they use a th tag. The difference? th bolds it's text by default. No such thing exists for the footer.
+      
+      
+      <br><br>
+        <br><br>Resource:<ul><li><a href="http://htmldog.com/guides/html/beginner/tables/" title="htmldog Tables">HtmlDog - Tables</a></li>
+        <li><a href="http://htmldog.com/guides/html/intermediate/tables/" title="htmldog Table headers, rowspan and colspan">HtmlDog - Table headers, rowspan and colspan</a></li><li><a href="http://htmldog.com/guides/html/advanced/tables/" title="htmldog advance tables - colgroup, footers">HtmlDog - Column Groups, Headers, and Footers</a></li></ul>
+        </div>
+	</section>
+    
+   
+    <section>
+    	<h2>Definition</h2><div class="cover">When writing up a definition list of a word etc.</div>
+        <div class="details">
+        Honestly I can't really see us using this as much, but it's best not to leave any stone un-turned.
+        <code><em>&lt;dl&gt;</em> - much like ul and ol it gets the list going.<br>&nbsp;<em>&lt;dt&gt;</em> - definition term, or the word you are defining.<br>&nbsp;&nbsp;<em>&lt;dd&gt;</em> - the defintion, you can list more than one if you're so unlucky.</code>
+		</div>
+    </section>
+    
+    
+    <section>
+    	<h2>Field Sets</h2><div class="cover">Group certain parts of forms together to organize forms.</div>
+        <div class="details">
+        <fieldset>
+        	<legend>Fieldset</legend>
+        	<p>This is what a field set looks like. The code:
+            <code><em>&lt;fieldset&gt;<br>&lt;legend&gt;Name of FieldSet &lt;/legend&gt;</em></code>
+            It's typically used in forms. I wonder how this can be set up via css outside of a form...</p>
+        </fieldset>
+        
+        <br><br>Resource:<ul><li><a href="http://htmldog.com/guides/html/advanced/forms/" title="htmldog advance forms">HtmlDog - Fieldsets</a></li></ul>
+        </div>
+	</section>
+    
+
+	<section>
+    	<h2>Option Groups</h2><div class="cover">Groups drop-down options together.</div>
+        <div class="details">
+        Say you have a bunch of options that are related to each other, for example Asians: Japanese, Chinese, etc. You can make an option group which groups these ethnicities together.
+        <code><em>&lt;select name="ethnicity"&gt;<br>&nbsp;&lt;opt group label="Asian"&gt;<br>&nbsp;&nbsp;&lt;option value="Japanese"&gt;Japanese&lt;/option&gt;</em></code>
+        Example:&nbsp;
+        <select>
+        	<optgroup label="Asian">
+            	<option>Japanese</option>
+                <option>Chinese</option>
+                <option>Korean</option>
+                <option>Other</option>
+			</optgroup>
+		</select>
+        <br><br>Resource:<ul><li><a href="http://htmldog.com/guides/html/advanced/forms/" title="htmldog advance forms">HtmlDog - Option Groups</a></li></ul>
+        
+        </div>
+	</section>
+    
+    <section>
+    	<h2>Address</h2><div class="cover">Group contact details in this element.</div>
+        <div class="details">
+        List your contacts in this element. Thus you probably want to use this only once.
+        <code><em>&lt;address&gt;</em><br>&lt;ul&gt;&lt;li&gt;012-345-6789...etc</code>
+        This has to be for semantic/SEO purposes only.
+        <br><br>
+        Resource:<ul><li><a href="http://htmldog.com/guides/html/intermediate/text2/" title="Reference to Address element info">HtmlDog - Address</a></li></ul>
+       </div>
+	</section>
+    
+    <section>
+    	<h2>Editorial</h2><div class="cover">Cross out <del>words</del> and insert <ins>new words</ins></div>
+        <div class="details">
+        Useful for blogs or news posts and to correct own mistakes. Use del to delete things and ins to place new word. 
+        <code><em>&lt;del&gt;</em>wrong<em>&lt;/del&gt;&lt;ins&gt;</em>right<em>&lt;/ins&gt;</em></code>
+        Will look like: <del>wrong</del> <ins>right</ins>
+        <br><br>
+        Resource:<ul><li><a href="http://htmldog.com/guides/html/intermediate/text2//" title="htmldog editorial">HtmlDog - Editorial</a></li></ul>
+        </div>
+	</section>
+    
+    <section>
+        <h2>Articles &amp; Sections</h2><div class="cover">Group related content together to better organize your page!</div>
+        <div class="details">
+		<strong>Section</strong>: a part of a document or article that is related to surrounding context.
+        <code>&lt;header&gt;NYTimes Paper&lt;/header&gt;<br>
+        	&nbsp;&nbsp;&nbsp;<em>&lt;section&gt;World News&lt;/section&gt;<br>
+            &nbsp;&nbsp;&nbsp;&lt;section&gt;American News&lt;/section&gt;<br></em></code>
+            
+        <strong>Article</strong>: is a more specific type of section. Articles can stand on their own. Think of it as a RSS feed or blog post.
+        <code>&lt;header&gt;NYTimes Paper&lt;/header&gt;<br>
+        	&nbsp;&nbsp;&nbsp;&lt;section&gt;World News&lt;/section&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;article&gt;War in Iran&lt;article&gt;</em><br>
+            &nbsp;&nbsp;&nbsp;&lt;section&gt;American News&lt;/section&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;article&gt;IRS Videos&lt;/article&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;Obama Care&lt;/article&gt;</em>
+            </code>
+        The main difference between the two is that a section cannot stand on its own. You may nest the elements in different combinations just so long as it makse sense. In our example a section would not be an article because a list of articles would not have been sent as a RSS feed. I.e. it would be weird to have a blog post that covers both the IRS videos and Obama care. If you ever get lost re visit Dr. Bruce's explanation.
+        <br><br>
+        Resource:<ul><li><a href="http://www.brucelawson.co.uk/2010/html5-articles-and-sections-whats-the-difference/" title="Dr. Bruce explains the difference between section and article tags">Bruce Lawson</a></li></ul>
+        </div>
+    </section>
+    
+    <section><h2>Aside</h2><div class="cover">Information not primarily important but still relating to</div>
+        <div class="details">Aside should be use to relate content that is not necessarily important to the article/page but is still related to the main body. It should be noted where the aside element is placed.
+        <code>
+        <pre>&lt;body&gt;
+        <em>&lt;aside&gt;</em> secondary info related to page/document
+            &lt;article&gt;
+                <em>&lt;aside&gt;</em> secondary info related to article</pre></code>
+       	Resource:<ul><li><a href="http://html5doctor.com/aside-revisited/" title="Definition of HTML5 Aside">HTML5 Doctor - Aside</a></li></ul>
+        </div>
+	</section>
+    
+    <section>
+    	<h2>Header <br>&amp; Footer</h2><div class="cover">Specialized sections for articles and documents</div>
+        <div class="details">Be sure you are aware of where you are placing these elements. If the &lt;header&gt; is in a &lt;article&gt; element then the header will be for that article. If it is outside an article element the header will be for the document.
+        <code>&lt;body&gt;<br>
+        &nbsp;<em>&lt;header&gt;</em> - document header<br>
+        &nbsp;&lt;article&gt;<br>
+        &nbsp;&nbsp;<em>&lt;header&gt;</em> - article header<br>
+        etc.</code>
+        <br><br>
+        Resource:<ul><li><a href="http://htmldog.com/guides/html/intermediate/sectioning/" title="htmldog sectioning">HtmlDog - Header & Footer</a></li></ul>
+        </div>
+	</section>
+    
+    <section>
+    	<h2>Navigation</h2><div class="cover">A group of navigation links, typically only one group</div>
+        <div class="details">Group all your navigation links into this element.
+        <code><em>&lt;nav id="main_nav"&gt;</em><br>&nbsp;&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;Home&lt;/li&gt;...etc<br><em>&lt;/nav&gt;</em></code>
+        My guess is that it is mostly for semantics and for bots to easily find links etc. Good SEO!
+        </div>
+	</section>
+	
+    <section>
+    	<h2>Old Browsers</h2><div class="cover">IE 8 and below won't understand HTML5 tags so....</div>
+        <div class="details">Download Shiv's fix and integrate js into your head element!
+        <code><em>&lt;!--[if lt IE 9]&gt;<br>
+        &nbsp;&nbsp;&lt;script src="dist/html5shiv.js"&gt;&lt;/script&gt;<br>
+        &lt;![endif]--&gt;</em></code>
+		<a href="https://code.google.com/p/html5shiv/" title="html5shiv download - to help old browswers read html5 tags">Download the js here.</a><br><br>Resource<ul><li><a href="http://htmldog.com/guides/html/intermediate/sectioning/" title="htmldog suggestion to html5shiv file">Htmldog - Sectioning + Html5Shiv file at the bottom</a></li></ul>
+        </div>
+	</section>
+    
+    
+    <section>
+    <h2>Button tag</h2>
+    <div class="cover">Buttons will execute simple JS commands</div>
+    <div class="details">
+   	
+    The button tag is different from &lt;input type="button&gt; because we can use images and words to place between tags. Button tags can exists outside of forms. We should always specify the button type because browsers each have a different default. The three types are<ol><li>button</li><li>submit</li><li>reset</li></ol> Seeing that the latter two corespond to a form we should just use button to do something that is not related to a form and use the input tag for form functions.
+    
+    <code>
+    <button type="button" onClick="alert('Ouch!')">Give me your best shot!</button><br><br>
+    
+    <em>&lt;button type="button" onClick="alert('Ouch!')"&gt;Give me your best shot!&lt;/button&gt;</em>
+    </code>
+    
+    
+    
+    </div>
+    </section>
+    
+    
+        
+</article>
+
+
+
+
+<!------------------------------------------CSS3------------------------------------------>
+
+
+<article id="CSS">
+<div class="headline"><header><h1>CSS3</h1></header></div>
+<!----------------------START OF SECTIONS---------------------------->   
+	<section style="border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px;">
+    <h2>Round Corners</h2><div class="cover" style="border-radius: 18px; -moz-border-radius: 18px; -webkit-border-radius: 18px;">Stop being a square! Make round corners!</div>
+    <div class="details">
+    Before: <div style="width: 150px; height:75px; background: #369;"></div>
+    <code>
+    div{<br>
+    &nbsp;&nbsp;&nbsp;<em>-moz-border-radius: 10px;</em> -For Mozilla!<br>
+    &nbsp;&nbsp;&nbsp;<em>-webkit-border-radius: 10px;</em> -For browsers using the webkit engine<br>
+    &nbsp;&nbsp;&nbsp;<em>border-radius: 10px;</em> -For browsers without webkits<br>
+    }
+    </code>
+    
+    After:
+    <div style="width: 150px; height:75px; background: #369; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;"></div>
+    
+    You can also control which borders are manipulated by following<br><br><strong style="font-size: 1.2em;"><abbr title="top left">TL</abbr> <abbr title="top right">TR</abbr> <abbr title="bottom right">BR</abbr> <abbr tittle="bottom left">BL</abbr></strong><br><br>
+    I.e. border-radius: 10px 5px 20px 0px;<br><br>
+    <div style="width: 150px; height:75px; background: #369; -webkit-border-radius:10px 5px 20px 0px; -moz-border-radius:10px 5px 20px 0px; border-radius:10px 5px 20px 0px;"></div>
+    </div>    
+    </section>
+    
+    
+    <section>
+    <h2>Child selectors</h2>
+    <div class="cover">Select a specific child in a nested element</div>
+    <div class="details">
+    <strong>first-child / last-child</strong><br>
+    first-child selects the first child of the selected type.
+    <code><pre>
+    &lt;ol&gt;
+    &lt;li&gt;<em>li:first-child</em>&lt;/li&gt;
+    &lt;li&gt;2nd child - not affected&lt;/li&gt;
+    &lt;li&gt;<em>li:last-child</em>&lt;/li&gt;
+    &lt;/ol&gt;</pre></code>
+    
+    Notice we did not say ol:first-child. This instead will look for an element with more than one ordered list and apply the styles to only the first list.
+    
+	<br><br>
+    <strong>nth-child</strong>
+    <br>The nth-child relates to the children and not the parent. I.e. if we have a list:<br>
+    <code><pre>
+    &lt;ol&gt;
+   	&lt;li&gt;<em>li:nth-child(1)</em>&lt;/li&gt;
+        &lt;li&gt;<em>li:nth-child(2)</em>&lt;/li&gt;
+        &lt;li&gt;<em>li:nth-child(3)</em>&lt;/li&gt;
+    &lt;/ol&gt;</pre></code>
+    Notice that we're not typing ol:nth-child, because ol is the parent. So we're saying search for any li elements that are the nth-child of an element.<br><br>
+    <strong>nth-of-type</strong><br>
+    Searches any element with a group of element types and adds style to the specific element. I.e.<br>
+    p:nth-of-type(2)<br>
+    <code><pre>
+    &lt;p&gt;1st paragraph&lt;/p&gt;
+    &lt;p&gt;<em>2nd paragraph</em>&lt;/p&gt; &lt;---adds style to this paragraph
+    &lt;p&gt;3rd paragraph&lt;/p&gt;
+    </pre></code>
+    <strong>p</strong>:nth-of-type(2) translates to select the 2nd paragraph in any element and add the following style to it.<br><br>
+    <strong>nth-of-type(even/odd)</strong><br>
+    Using the same selector we can target only even or odd children in an element.<br>
+    p:nth-type(even){ whatever style; }
+    <code><pre>
+    &lt;p&gt;1st paragraph&lt;/p&gt; &lt;---unaffected since it is an odd number.
+    &lt;p&gt;<em>2nd paragraph</em>&lt;/p&gt; &lt;---affected since it is an even number.
+    &lt;p&gt;3rd paragraph&lt;/p&gt; &lt;---unaffected since it is an odd number.
+    </pre></code>
+    </div>
+    </section>
+    
+    <section>
+    <h2>direct child/sibling selectors</h2>
+    <div class="cover">Select only children/siblings</div>
+    <div class="details">
+   	<strong>&gt;</strong><br><br>
+	The difference between ul li{} and ul &gt; li{} is that the latter will only select direct children of ul.
+    <code><pre>
+    &lt;ul&gt;
+    	&lt;li&gt;<em>1</em>&lt;/li&gt; &lt;-----<em>Affected</em>
+        &lt;li&gt;<em>2</em>&lt;/li&gt; &lt;-----<em>Affected</em>
+        &lt;ol&gt;
+        	&lt;li&gt;1a&lt;/li&gt;
+            &lt;li&gt;2a&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;li&gt;<em>3</em>&lt;/li&gt; &lt;-----<em>Affected</em>
+    &lt;/ul&gt;
+    </pre></code>
+    1a and 2a are grandchildren of ul and thus not affected by the style of ul &gt; li{}<br><br>
+    
+    <strong>Adjacent Sibling Selectors (+)</strong><br>
+    An adjacent sibling combinator selector allows you to select an element that is directly after another specific element but it does not affect the 1st element. SO....
+    <code><pre>
+    p+p{ color: green;}
+    
+    &lt;p&gt;1st paragraph&lt;/p&gt;
+    &lt;p&gt;<em>2nd paragraph</em>&lt;/p&gt;
+    &lt;p&gt;3rd paragraph&lt;/p&gt;
+    </pre></code>
+    
+    This is ONLY if the next sibling element is a p element. So under the same stylings
+    <code><pre>
+    &lt;p&gt;1st paragraph&lt;/p&gt;
+    &lt;div&gt;2nd paragraph&lt;/div&gt;
+    &lt;p&gt;3rd paragraph&lt;/p&gt;
+    &lt;p&gt;<em>4th paragraph</em>&lt;/p&gt;
+    </pre></code>
+    
+    Only the 4th paragraph is affected because the first p element is followed by a div which does not meet the rule of p+p. p+p can translate to any paragraph element that follows a paragraph element has this style.
+    
+    </div>
+    </section>
+    
+    
+    <section>
+    <h2>first line/letter</h2>
+    <div class="cover">Style just the first letter or first line of a body of text</div>
+    <div class="details">
+    Target just the first letter or first line in a body of text, most likely in a paragraph.
+    <code>
+    p:first-letter<br>
+    p:first-line
+    </code>
+    <strong>first-line NOTE</strong>if the user changes the zoom in their browser and the text wraps, the styles will still only affect the top line.<br><br>
+    Reference: <a href="http://www.w3schools.com/css/css_pseudo_elements.asp" title="w3schools.com">w3schools.com</a>
+    </div>
+    </section>
+    
+    <section>
+    <h2>before/after</h2>
+    <div class="cover">Add content to elements before and after!</div>
+    <div class="details">
+    This I can only assume was added to save code/time. We can add images/text before or after elements using after/before psuedo selectors.
+    
+    <code><pre>
+    &lt;p&gt;This is a simple paragraph&lt;p&gt;
+    
+    Apply some CSS code,
+    <em>p:before</em>{
+    	<em>content: open-quote;</em>
+        color:red;
+    }
+    <em>p:after</em>{
+    	<em>content: '"'</em>
+        color:red;
+    }
+    
+    What will display is:
+    <span style="color:red;">"</span>This is a simple paragraph<span style="color:red">"</span>
+    </pre></code>
+    
+    Note the use of <strong>content</strong>. These pseudo elements do not create a whole new element, but rather stick content in before the element. The browser actually reads this like &lt;p&gt;"This is...<br><br>
+    To stick images instead of text: <strong>content: url("whateverImage.jpg")</strong>
+    
+    </div>
+    </section>
+   
+    
+    
+    <section>
+    <h2 style="text-shadow: 4px 4px 6px #999;">Text Shadows</h2>
+    <div class="cover">Add depth and make text stand out by creating text shadows!</div>
+    <div class="details">Text shadow is supported by most modern browsers. <br><br>Syntax: text-shadow: (offset right) (offset below) (blur amount) (color);<br><br>
+    <span style="font-size: 2em;">Sample Text</span> add text-shadow...
+    <code>
+    <em>text-shadow: 4px 4px 6px #999;</em>
+    </code>
+    
+    <span style="font-size: 2em; text-shadow: 4px 4px 6px #999;">Sample Text</span><br><br>
+    
+    You want to make sure if a dark text is on a light background the shadow is lighter than the text. Otherwise it distracts more than adds<br>
+    
+	<span style="font-size: 2em; text-shadow: 4px 4px 6px #000;">Sample Text</span><br><br>
+   
+	But would the opposite apply?<br><br>
+    
+    <span style="display: block; margin-top: 15px;padding: 20px; font-size: 2em; background: #00507A; color:#fff; text-shadow: 4px 4px 6px #000;">Sample Text</span>
+    <span style="display: block; margin-top: 15px;padding: 20px; font-size: 2em; background: #00507A; color:#fff; text-shadow: 4px 4px 6px #fff;">Sample Text</span><br>
+    I guess it's more of a trial and error type of thing. Remember what the guy said, design then code not design while coding ;)<br><br>
+    
+    If you would like the shadow to fall to the top and left, set your pixels to a negative number. I.e.
+    <code>
+    text-shadow:<em>-4px -4px</em> 6px #fff;</code>
+    <span style="display: block; margin-top: 15px;padding: 20px; font-size: 2em; background: #00507A; color:#fff; text-shadow: -4px -4px 6px #fff;">Sample Text</span>
+    <br>
+    
+    You can also have multiple text shadows to create an emboss effect:
+    <code>
+    text-shadow:-2px -2px 3px #fff, 4px 4px 6px #000;
+    </code>
+   
+    
+    <span style="display: block; margin-top: 15px;padding: 20px; font-size: 2em; background: #00507A; color:#fff; text-shadow: -2px -2px 3px #fff, 4px 4px 6px #000;">Sample Text</span><br>
+    Note how much tighter the "highlight" is compared to the "shadow"
+    
+    
+    </section>
+
+
+    <section>
+    <h2>Transitions</h2><div class="cover">Animation type Transitions.</div>
+    </section>
+    
+    
+    <section>
+    <h2>Transformation</h2><div class="cover">Edit elements via Transformation.</div>
+    </section>
+    
+</article>
+
+
+
+<!----------------------------------------------JavaScript---------------------------------------------------------->
+
+</article>
+
+<article id="js">
+<div class="headline"><header><h1>JS</h1></header></div>
+<!----------------------START OF SECTIONS---------------------------->
+
+<section>
+<h2>console.log()</h2>
+<div class="cover">Instead of using alert, we can use console.log which is a little more discrete.</div>
+<div class="details">Be sure to download a console log for your browser to be able to see the log.
+<code>
+<em>console.log("whatever you want instead of alert");</em>
+</code>
+
+The hassle of NOT having to press okay is the clear benefit of console.log() over alert(). Once I explore console more I will know more benefits, I'm sure.
+</div>
+</section>
+
+<section>
+<h2>== vs ===</h2>
+<div class="cover">The differences between them and why you should only use one over the other.</div>
+<div class="details">According to Douglas Crockford we should only use "===" because...<br>
+<br>
+JavaScript has two sets of equality operators: === and !==, and their evil twins == and !=. The good ones work the way you would expect. If the two operands are of the same type and have the same value, then === produces true and !== produces false. The evil twins do the right thing when the operands are of the same type, but if they are of different types, they attempt to coerce the values. the rules by which they do that are complicated and unmemorable. These are some of the interesting cases:
+<pre>
+'' == '0'           // false
+0 == ''             // true
+0 == '0'            // true
+
+false == 'false'    // false
+false == '0'        // true
+
+false == undefined  // false
+false == null       // false
+null == undefined   // true
+
+' \t\r\n ' == 0     // true
+</pre><br>
+
+The lack of transitivity is alarming. My advice is to never use the evil twins. Instead, always use === and !==. All of the comparisons just shown produce false with the === operator.
+</div>
+</section>
+
+
+<section>
+<h2>.length</h2>
+<div class="cover">Find the length of a string or an array.</div>
+<div class="details">In order to find the length of a string or an array simply use .length
+<code>
+<em>array.length</em> = how many objects are in the array<br><br>
+<em>string.length</em> = how many characters are in the string
+</code>
+Both are 0 indexed. NOTE there are NO paranthesis after length.
+</div>
+</section>
+
+<section>
+<h2>Strings +</h2>
+<div class="cover">Covers a lot about what you can do with strings</div>
+<div class="details">String is a type of data object which normally consists of numbers and letters. They do not have any mathematical value, unless we turn "0" to 0. But we cannot turn "zero" into 0.<br><br>
+
+A list of Methods can be found on <a href="http://www.w3schools.com/jsref/jsref_obj_string.asp" title="JavaScript String Ojects - w3Schools">w3School's website</a>. So I'll go over the ones I believe will be most useful for us.<br><br>
+
+match() - searches for a match between a regular expression and a string, and returns the matches.<br>
+<br>
+replace() - Searches for a match between a substring (or regular expression) and a string, and replaces the matched substring with a new substring<br>
+<br>
+slice() - extracts a part of a string and returns a new string<br>
+<br>
+split() - splits a string into an array of substrings
+<br><br>
+<h3>Regular Expression</h3>
+Regular expressions are used to perform pattern-matching and "search-and-replace" functions on text.
+<br><br>
+/i - used to mark an case-INsensitive search.<br><br>
+/g - used to mark a global search. Withouth it the search will end once the very first match/search is found.<br><br>
+
+Instead of quotes we use / to enclose a search. I.e. /search/ will search for the word "search".
+<code><pre>
+var str="Is this all there is?";
+var patt1=<em>/is/g;</em> - patt1 = pattern 1
+document.write(str.match(patt1)); - return any match with patt1
+</pre></code>
+What got returned was an array, "is, is" is what got written in the document. Of course we could always write the pattern in the method. I.e. document.write(str.match(/is/g)); We cannot combine variables with strings in one line. We would have to define a new variable or reassign the variable.
+
+</div>
+</section>
+
+<section>
+<h2>do / while</h2>
+<div class="cover">How do while and while loops works</div>
+<div class="details">
+As long as a value is true the loop will continue. This is useful when you don't know how many times you need to repeat a loop and instead need to wait until something happens.
+<code><pre>
+<em>while(boolean){
+	code
+    }</em></pre></code>
+The loop will break when the boolean turns false, or when you ask it to by using a break; command. Normally you would put that in an if statement.<br><br>
+The do while loop instead will run the code once and THEN check if the condition is true.
+<code><pre>
+<em>do{
+	run this code once.
+    }</em>while(boolean)</pre></code>
+This allows us to first check a group of code before looping.
+</div>
+</section>
+
+
+<section>
+<h2>Pop-up Boxes</h2>
+<div class="cover">We go over the 3 pop-up boxes Javascript can create!</div>
+<div class="details">There are 3 pop-up boxes in Javascript.
+
+<code>
+<em>alert()</em> - A pop-up box with the option okay I got the alert<br><br>
+<em>confirm()</em> - Will ask user to confirm a question and will return the result as true (okay) or false (cancel)<br><br>
+<em>prompt("question", "pre-fill")</em> - Will ask user to type in an answer. Returns a string. Question is what will be asked, and pre-fill is the text that is pre-filled in the box to hint the user.
+</code>
+
+If you want to create a new line in the pop-up box us "/n".<br><br>
+
+<button onClick="alert('This is an alert box');" style="padding: 5px;">Alert</button><br>
+<button onClick="confirm('Confirm Box');"  style="padding: 5px;">Confirm</button><br>
+<button onCLick="prompt('Prompt Box', 'Pre-fill');"  style="padding: 5px;">Prompt</button>
+
+The way we would use prompt is to ask a question and store the answer in a variable for later use. Also true for confirm and if/else conditions. I.e.
+
+<code>
+var age = <em>prompt('How old are you?');</em>
+if(<em>confirm("Are you over 18?")</em>){ etc...
+</code>
+
+Note: We cannot change the answers to confirm. We would have to build a work-around via JS. Default answers are "Okay" and "Cancel".
+
+
+</div>
+</section>
+
+<section>
+<h2>subString</h2>
+<div class="cover">How to cut a piece of string to get only a certain part</div>
+<div class="details">
+So if we were to extract Bat from Batman syntax would look like:
+
+<code>
+<em>"Batman".substring(0, 3);</em>
+</code>
+
+The syntax is "String".substring(x, y); Where x is the beginning of the cut and y is the end. Notice that we're counting the spaces and not the actual letters. I.e. 0-B-1-A-2-T-3-M-4, thus Whatever is in between 0 and 4 will be pulled.<br><br>
+Note that substring is NOT camel cased.
+</div>
+</section>
+
+<section>
+<h2>function</h2>
+<div class="cover">How to create a function, etc</div>
+<div class="details">Function is a set of code that can be used and resused to execute a bunch of lines.
+<code>
+<em>function functionName (parameters){<br>
+code goes here;<br>}</em> Be sure to place the semi-colon!
+</code>
+
+functionName = the custom name of the function. Parameters are values you "pass-through" to the function. I.e. x function will figure out the sum of 4 and 5 and then will pass the sum to function y using the return command. This is more towards the complex stuff. Multiple parameters may be passed by using a comma to separate the different parameters.
+There is a different way of creating a function:
+
+<code>
+var functionName = function (){}etc.
+</code>
+
+This function cannot be called upon until after it's declared. I.e:
+
+<code>
+sample();<br><br>
+var sample = function(){}
+</code>
+
+Will throw an error. The former forces the function to be pushed to the top of the list and gets processed before everything else. Let's stick to the former.<br><br>
+
+NOTE: When declaring a function we do not need to end it with a semi-colon.<br><br>
+
+NOTE: Any variables created within a function is only accessible from within the function. We can edit global variables within a function and also re-create variables within the function without affecting global functions.
+
+<code>
+<pre>
+var global = 1;
+
+function sample(){
+	<em>global = 3;</em> - changes the global variable to 3
+    <em>var local = 2;</em> - local is only accessible between the two curly brakets.
+    <em>var global = 4;</em> - this overwrites the global variable and creates a local variable. 
+    This does not change the global variable.
+}
+</pre></code>
+
+<strong>Passing in Objects</strong><br>
+We can also pass in objects into functions in order to use their properties to do things. We just have to be sure we're passing in objects and not a different data type.
+
+<code><pre>
+function ageDifference(person1, person2){
+	<em>return person1.age - person2.age;</em>
+}
+</pre></code>
+
+Of course age or whatever property will have to be defined before calling the function. 
+
+</div></section>
+
+<section>
+<h2> &amp;&amp;, ||, !</h2>
+<div class="cover">Logical operators</div>
+<div class="details">Sometimes you'll have to see if more than one condition is true before executing a line of code. I.e if x and y are true then do this. Or you might need to check if one of two variables are true to run a line of code.
+<code><pre>
+<em>&amp;&amp;</em> = and. Both sides of the operator needs to be true for the line of code to run.
+<em>||</em> = or if one or both of the sides are true run this line of code.
+<em>!</em> = NOT. Turns anything into a negative. I.e. !false = true and !true = false.</pre>
+</code>
+
+We would basically use these operators when evaluating two variables or values.
+<code><pre>
+if(2 < 3 &amp;&amp; 3 > 2){
+	this code will run because both equations are true;
+} 
+
+if(2 < 3 &amp;&amp 3 > 10){
+	This will not run because 3>10 is false;
+}
+
+if(2 < 3 || 3 > 10{
+	this code WILL run because although 3 > 10= false,
+     2 < 3 is true and with || you only need one side to be true.
+}</pre>
+</code>
+</div></section>
+
+
+<section>
+<h2>Letter case</h2><div class="cover">Learn how and when to change letter casing</div>
+<div class="details">The only time it has been explained to me when to change the case of a string is when you are taking a user's answer and using a switch/if statements to create a reaction. So...
+<pre>
+var ego = prompt("Got money?");
+The users input could be "yes" or "Yes" or "no" or "NO" etc.
+so to check it with a switch/if statement we would have to use toUpperCase or toLowerCase, otherwise we would have to test for all outcomes.</pre>
+
+<code>
+var ego = prompt("Got money?")<em>.toLowerCase();</em>
+</code>
+This will change all answers to lower case making it easier for us to compare it with a switch etc.
+
+</div>
+</section>
+
+
+<section>
+<h2>if</h2>
+<div class="cover">Learn how to give the computer decision making power!</div>
+<div class="details">
+Bascially the code will read if something is true run this. If it is false skip it and continue.
+<code>
+<em>if(boolean){run this code; }</em> - code will run if the boolean is true<br><br>
+if(boolean){<br>
+&nbsp;&nbsp;&nbsp;run code1;
+<br>}<em>else</em>{<br>run code2;<br>} - if the boolean is true it will run code1, if it is false it will run code2.
+</code>
+
+We can write the code without curly braces but it is not recommended because it makes the code less readable.
+
+<code>
+if (boolean) run this code;
+</code>
+Not sure what the limitation are, but let's keep it to one line.
+</div></section>
+
+<section>
+<h2>typeof()</h2>
+<div class="cover">Find out what type of data something is</div>
+<div class="details">Sometimes you need to find out the type of data someone enters to make sure it's a number or string, etc.
+<code>
+<em>typeof(x);</em> - will return a string describing the type. Types are: string, boolean, number, integer, array, objects
+</code>
+
+variables are not limited to a certain type. I.e. if we change x = 5 to x = "five" the type will change from integer to number without problem.
+</div>
+</section>
+
+<section>
+<h2>isNaN()</h2>
+<div class="cover">Checks to see if value is not a number.</div>
+<div class="details">Caution when using this function as it's behaviour is somewhat unpredictable. The function returns true if the value is not a number and false if it IS a number.
+<code>
+<em>isNan("This is not a number")</em> = true;<br>
+<em>isNan(0)</em> = false;
+</code>
+
+
+Here are some tricky behaviors of isNan:<br>
+<pre>
+isNaN(NaN);       // true
+isNaN(undefined); // true
+isNaN({});        // true
+
+isNaN(true);      // false
+isNaN(null);      // false
+isNaN(37);        // false
+
+// strings
+isNaN("37");      // false: "37" is converted to the number 37 which is not NaN
+isNaN("37.37");   // false: "37.37" is converted to the number 37.37 which is not NaN
+isNaN("");        // false: the empty string is converted to 0 which is not NaN
+isNaN(" ");       // false: a string with spaces is converted to 0 which is not NaN
+
+// This is a false positive and the reason why isNaN is not entirely reliable
+isNaN("blabla")   // true: "blabla" is converted to a number. Parsing this as a number fails and returns NaN
+</pre>
+<br>
+This is from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" title="isNan, JavaScript | Mozilla Developer's site">Mozilla's developer site.</a>
+</div>
+</section>
+
+
+
+
+
+<section>
+<h2>switch</h2><div class="cover">Give your code some real decision making skills!</div>
+<div class="details">
+switch allows you to create a fork in the road with multiple options.
+
+<code><pre>
+<em>switch(lunch){</em> //lunch is a variable
+	<em>case 'sandwich':</em>  // if lunch = 'sandwich' then run this
+    		console.log(" ");
+        	<em>break;</em>	//breaks out of the switch. Without it the code will continue to run the default.
+	<em>default:</em>
+    		if nothing matches our cases run this code.</pre>
+</code>
+Note that at the end of every case is a colon, not a semi-colon.
+</div></section>
+
+
+
+
+
+<section>
+<h2>Objects</h2><div class="cover">The building blocks of any Object oriented programming!</div>
+<div class="details">Objects are similar to arrays in that they store data. The difference is that instead of storing the data by index number it stores data using custom "keys".
+<code><pre>
+<em>var newObj = {
+	name: "object 1",
+    type: "object"
+} </em> - NOTICE the brackets are CURLY. This is the short-hand called Object litteral notation.
+
+<em>var newObj2 = new Object();</em> - here we're using the object constructor (new).
+
+newObj2.name = "object 1";
+newObj2.type = "object";
+</pre></code>
+
+name and type are custom keys to the object. This is how we store and retrieve data from the object. We can also create functions or methods of objects by...
+<code><pre>
+var newObj = {
+	name: "obj1",
+	<em>objMethod: function(){}</em>
+}
+
+Or
+
+var newObj2 = new Object();
+<em>newObj2.obj2Method = function (){};</em>
+</pre></code>
+
+We would call the methods...
+<code><pre>
+newObj.objMethod();
+newObj2.obj2Method();
+</pre></code>
+
+Notice the commas between keys and the semi-colon outside of the last curly brace. The keys need to be followed directly by a colon. A space between them may cause problems.<br><br>
+
+<strong>The Difference!</strong><br>
+One of the differences I have learned is that you cannot use variables to access key names using dot notation, you have to use bracket notation. I.e.
+<code><pre>
+var james = {
+	job: "dad",
+    married: false
+}
+
+var aKey = "job";
+
+james.aKey; ----this will look for a key named "aKey" which is not what we want.
+<em>james[aKey];</em> ---- "aKey" will be replaced by "job" thus JS will look for a key called job which is exactly what we want.
+</pre></code>
+
+Another! We cannot create private/public variable/functions using dot notation. We can only do it when we first (being researched) declare the class.
+</div>
+</section>
+
+<section>
+<h2>typeof</h2>
+<div class="cover">Find out the type of a variable</div>
+<div class="details">
+Say we are taking in input from a user and we want to know what type of data it is. We can use typeof to figure it out.
+<code><pre>
+var anObj = { job: "I'm an object!" };
+var aNumber = 42;
+var aString = "I'm a string!";
+
+console.log(<em>typeof anObj</em>); // should print "object"
+console.log(<em>typeof aNumber</em>); // should print "number"
+console.log(<em>typeof aString</em>); // should print "string"
+</pre></code>
+
+typeof pushes out a string. Thus if we ran an if statement it would be
+<code>
+if(<em>typeof aString === "string"</em>)....
+</code>
+Note that it's all lower case.
+
+</div>
+</section>
+
+<section>
+<h2>hasOwnProperty (objects)</h2>
+<div class="cover">Sees if an object has a specific property</div>
+<div class="details">
+We can check the type of object by checking it it has a specific property.
+<code><pre>
+var myObj = {
+    <em>name: "bob"</em>
+};
+
+console.log( myObj.<em>hasOwnProperty('name')</em> ); // should print true
+console.log( myObj.<em>hasOwnProperty('nickname')</em> ); // should print false
+</pre></code>
+
+</div>
+</section>
+
+
+
+<section>
+<h2>for in</h2>
+<div class="cover">Looping through objects and arrays.</div>
+<div class="details">
+Looping through object properties to find specific answers!
+<code><pre>
+<em>for(var key in obj){
+	Run this code please!
+}</em></pre>
+</code>
+A key is a property of an object. It holds information for us. This for loop will cycle through the object keys, no matter their name, and will run the code. The code will run through as many times as the number of properties an object has. I.e. if the object has five properties, the loop will run five times. One for each property.<br><br>
+To access the property the loop is on
+<code><pre>
+for(var key in obj){
+	console.log(<em>obj[key]</em>);
+}</pre></code>
+
+</div></section>
+
+
+<section>
+<h2>Methods</h2>
+<div class="cover">The oh so important methods of objects</div>
+<div class="details"> Basically functions stored in objects. To declare one
+
+<code>
+<em>obj.meth</em> = function (){ code };
+</code>
+
+If the function the created before the object then we can set a function by accessing it's name.
+<code><pre>
+function setAge(age){
+	this.age = age;
+}
+
+var susan = {
+    age: 25,
+    <em>setAge: setAge</em>
+};</pre></code>
+
+Notice how setAge has the keyword <strong>this</strong> which makes the function generic until it is assigned to object susan.
+</div></section>
+
+<section>
+<h2>prototype</h2>
+<div class="cover">How to change/add methods in the "classes"</div>
+<div class="details">
+We can add functions, properties to classes after they have been created by using the prototype keyword.
+<code><pre>
+function Dog(breed){
+	this.breed = breed;
+}
+
+<em>Dog.prototype.speak = function(){
+	console.log('woof');
+}</em>This will add a method to Dog called speak.
+
+</pre></code>
+
+If we do not add the keyword prototype, the method will not get added. It has to reflect back to the original class and not an instance of the class. I.e.
+<code><pre>
+var Snoopy = new Dog("beagle");
+Snoopy.prototype.speak = function(){ code};
+</pre></code>
+This won't do anything. We can though add functions specifically to Snoopy without affecting any other instances of Dog by taking out prototype.
+<code><pre>
+Snoop.speak = function(){ console.log("bark");};
+Lassie.speak() <em> this will run an error since Lassie doesn't know how to speak unless we add a method to her.</em>
+</pre></code>
+Why is this useful? My guess is that in case you want something to behave a certain way under certain conditions (ifs) and a different way under different conditions you can add/edit the methods of all classes rather than just one at a time.<br>
+<br>
+<strong>Note</strong>
+We cannot edit a method that is added individually to an instance. I.e. if we assigned shake to Lassie individually and then decide to add the shake method to our Dog class, the code we assigned Lassie will remain unchanged.
+<code><pre>
+function Dog(breed){
+}
+
+var Lassie = new Dog();
+
+Lassie.bark = function(){
+  console.log("Hi there!"); <em>This runs</em>
+};
+
+Lassie.bark();
+
+Dog.prototype.bark = function(){
+  console.log("woof");
+};
+</pre></code>
+My guess is that the prototype is overwritten when we assigned a specific to Lassie. Something like CSS.
+</div>
+</section>
+
+
+<section>
+<h2>this</h2>
+<div class="cover">A generic placeholder for objects.</div>
+<div class="details">this acts like a generic placeholder to access various object properties/methods without changing the code.
+<code><pre>
+function setAge(newAge) {
+  this.age = newAge;
+};
+
+// now we make bob
+var bob = new Object();
+bob.age = 30;
+
+// We then assign the generic function to bob, so he can use it. 
+<em>this</em> will now turn into bob when bob calls it.
+
+bob.setAge = setAge;
+  
+// change bob's age to 50 here
+bob.setAge(50);
+</pre>
+</code>
+</div>
+</section>
+
+<section>
+<h2>"class"</h2>
+<div class="cover">"class (AS3)" === custom constructors in JavaScript</div>
+<div class="details">
+Build skeletons of custom objects. Instead of creating an object with the same set of properties/methods, we can build a template and input our own properties into it.
+
+<code><pre>
+function Person(name, age){
+	this.name = name;
+    this.age = age;
+}
+
+var bob = <em>new</em> Person("Bob Smith, 30);
+var susan = <em>new</em> Person("Susan Jordan", 25);
+</pre></code>
+
+The new keyword turns the function into an object. Similar to var o = <em>new</em> object(); Object is just a built-in template. Be careful of the properties that you pass in. They have to be in the proper order.<br><br>
+
+</div>
+</section>
+
+
+
+<section>
+<h2>Organizing Objects</h2>
+<div class="cover">Learn how to keep your objects tidy in arrays.</div>
+<div class="details">
+Best way to organize, categorize, loop and call upon your custom objects is to keep them in an array. Codecademy suggests that each object is a person's contact info and that the array is like the binding of an address book.
+<code><pre>
+function person(firstN, lastN, email, telephone){
+	this.firstName = firstN;
+    this.lastName = lastN;
+    this.email = email; <em>Notice that the key has the same name as the parameter. This is okay, but I wouldn't suggest it to avoid confusion.</em>
+    this.phoneNumber = telephone;
+    addressBook.push(this);
+}
+
+var sally = new person("Sally", "Fields", "sfields@baking.com", "9999999");
+</pre></code>
+
+Codecademy suggests since we're placing our objects into an array, we don't necessarily need to give our objects names. Instead we would directly place them into the array.
+
+<code><pre>
+addressBook[0] = person("Sally", "Fields", "sfields@baking.com", "9999999");
+</pre></code>
+
+Honestly I wouldn't recommend doing this because if we do the latter we won't have a direct access to our listing. I.e. we would need to know the index number of sally instead of calling her directly.
+<code><pre>
+sally.lastName = <em>This won't work because we did not asign a name to our variable.</em>
+addressBook[0].lastName = <em>Is the only way to access sally's info. Bummer...</em>
+</pre></code>
+Codecademy streamlines this process by creating a function to enter all the properties in.
+<code><pre>
+function add(firstName, lastName, email, telephone){
+	addressBook[addressBook.length] = {
+    	firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phoneNumber: telephone
+    }
+}
+</pre></code>
+
+<strong> Notes</strong><br>
+addressBook.length will always be 1 more than the index number the array is on since arrays are zero index. Thus using this will always add the new contact to the end of the array. Not sure why we couldn't use the push method of the array? Notice the names of the keys are the same as the parameters, which is fine, just don't get it confused or use different names.
+</div></section>
+
+
+<section>
+<h2>clone..sorta</h2>
+<div class="cover">No clone, so here's the next best thing.</div>
+<div class="details">
+There is no direct clone method in javascript. Parameters do not pass to the "clone". But we can copy any set property/methods (even ones modified by prototype) to a new class to mess around with.
+<code><pre>
+function Bird(name){
+    this.name = name;
+    this.laysEgg = true; 
+}
+
+function Penguin(name){
+    <em>this.name = name; // We have to add this because Bird takes this parameter</em>
+ }
+
+<em>Penguin.prototype = new Bird();</em>
+
+var Penny = new Penguin("Penny");
+
+for(var i in Penny){
+    console.log(i + ": " + Penny[i]);
+}
+
+Output:
+"name: Penny"
+<em>"laysEgg: true"</em>
+</pre></code>
+I hear mootools(framework) has a solution to it. Not sure if it works. Here is the discussion on <a href="http://stackoverflow.com/questions/122102/most-efficient-way-to-clone-an-object" title="Most efficient way to clone an object - JavaScript || Stackoverflow.com">Stacks</a>. Look a couple answers down, the most-voted is for a jQuery solution, which I'm not sure works.
+
+</div>
+</section>
+
+<section>
+<h2>Private &amp; Public</h2>
+<div class="cover">Find out how to make variables/methods private</div>
+<div class="details">
+We can assign variables/methods that are only accessible via class.
+<code><pre>
+function Person(name){
+	this.name = name;
+    <em>var bankBalance = 5929;</em> - variable
+    <em>var doSomething = function(){
+	    //private code
+    }</em> - private method/function
+}
+</pre></code>
+
+this.name = name is public because it assigns itself to the new instance. Variables only exists within functions and making a function/method a variable it will not be accessible outside of the class. To access private method/variables you need to have a public method to "return" the values.
+
+<code><pre>
+this.askTeller = function(){
+	return bankBalance; // returns variable.
+    return doSomething; // be careful NOT to call the function by adding ()
+}
+</pre></code>
+
+Codeacademy suggests passing in a parameter to add some measure of secruity.
+<code><pre>
+this.askTeller = function(pass) {
+     if (pass == 1234){
+     return bankBalance; 
+     }//note how equals is == and not === because we could have passed a string instead of a number.
+     else{
+      return "Wrong password.";
+     };
+   };
+</pre></code>
+
+<strong>*** Being Researched ***</strong>
+It seems like we can only declare private methods/variables when we first declare the class. I.e. we can't easily modify it simply by using obj.prototype like how we can with public methods/variables.
+
+</div>
+</section>
+
+</article>
+
+
+
+
+
+
+<!----------------------------------------------------jQuery--------------------------------------------------------->
+
+
+
+
+
+
+
+<article id="jQuery">
+<div class="headline"><header><h1>jQuery</h1></header></div>
+<!----------------------START OF SECTIONS---------------------------->       
+    
+    <section>
+    <h2>Load jQuery</h2><div class="cover">How to load jQuery into your document.</div>
+    <div class="details">In order for jQuery to work in a web page we first must load it.
+    <code>&lt;script src="../js/jquery-1.10.0.min.js"&gt;&lt;/script&gt;</code>
+    <a href="http://jquery.com/download/" target="_blank">Download a copy of the latest jQuery here!</a> Do more, write less!<br><br>
+    Once you loaded the jQuery to your webpage, you must start every jQuery code with:
+    <code><em>$(document).ready(function(){YOUR CODE GOES HERE});</em></code>
+    What this does is wait for the document to load before loading jQuery. If we don't have this jQuery will load at the same time as the html file. Sometimes the jQuery file will load faster and will have issues finding elements which have yet to be loaded, making the code to break. As of right now we can place variables and custom functions outside of the ready event.<br><br>
+    <strong> UPDATE!</strong><br>
+    So apparently there is another way to execute jQuery just in case we use a different framework that also uses the dollar sign.
+    <code><em>jQuery(function($){ ALL YOUR CODE GOES HERE });</em></code>
+    This will do two things, one it will load only once the DOM is loaded and will ensure that everything in between the brakets is jQuery and not a different framework. All of your code will go in between the brakets include variables and custom functions.
+    </div>
+    </section>
+
+	<section>
+    <h2>.html()</h2><div class="cover">Will push out any html inside of specified tag</div>
+    <div class="details">So for example if we have a link inside a li element.
+    <code>&lt;li&gt;&lt;a href="766" data-flight="6"&gt;Flight 776&lt;/a&gt;&lt;/li&gt;</code>
+    We can pull what's inside the li tag when we use .html() i.e.
+    <code>$("li")<em>.html()</em></code>
+    Result: 
+    <code>&lt;a href="766" data-flight="6"&gt;Flight 776&lt;/a&gt;</code>
+    </div>
+    </section>
+    
+    <section>
+    <h2>.text()</h2><div class="cover">Need text within an element tag? Use .text()!</div>
+    <div class="details">If for example we need to pull or even change text within an element tag we can use the jquery command, .text()
+    <code>&lt;span&gt;Aloha!&ltspan&gt;<br><br>
+    var Texas = "howdy!"<br>
+    $("span")<em>.text();</em> = Aloha!<br>
+     $("span")<em>.text(Texas);</em> = Howdy!
+    </code>
+    This is a great way to update info when something happens. For example changing a text that says send form, to thanks we got it!
+    </div>
+    </section>
+    
+   	<section>
+    <h2>.attr();</h2><div class="cover">Retrieve attribute values from tags</div>
+    <div class="details">Most HTML head tags will have attributes with values in them. I.e. class values or href values. We can retrieve them or edit them to our hearts content!
+    <code>&lt;li&gt;&lt;a href="766" data-flight="6"&gt;Flight 776&lt;/a&gt;&lt;/li&gt;<br><br>
+    $("a")<em>.attr('href');</em> = 766</code>
+    I presue we can change the href value by assigning it to a different string/variable.
+    </div>
+    </section>
+    
+    <section>
+    <h2>.data()</h2><div class="cover">Retrieve/edit data stored in custom-made html data tags.</div>
+    <div class="details">We can hide information in html head tags by using the data attribute to later use in JavaScript. Okay well this is how we access it!
+    <code>&lt;li&gt;&lt;a href="766" data-flight="6"&gt;Flight 776&lt;/a&gt;&lt;/li&gt;<br><br>
+    $("a")<em>.data('flights');</em> = 6</code>
+    </div>
+    </section>
+    
+    <section>
+    <h2>nth-child</h2><div class="cover">jQuery does not support the pseudo-element nth:child-of-type, so use eq instead!</div>
+    <div class="details">jQuery doesn't support :nth-of-type (it does support :nth-child) as a part of it's selector engine, but this is very similar. This selects the Xth element from the already-matched set. It's also zero-indexed (0 is the first element) unlike :nth-child in which the first element is 1.
+    <code>$("#tab li:<em>eq(2)</em> a ").click();</code>
+    Notice that the jQuery line is right in there with the CSS format. Note that eq is zero indexed. Explanation was straight out from <a href="http://css-tricks.com/pseudo-class-selectors/">CSS Tricks!</a>
+    </div>
+    </section>
+    
+    <section>
+    <h2>Mouse Actions!</h2><div class="cover">Covering mouse enter and leave and click!</div>
+    <div class="details">This is how we add basic mouse listeners!
+    <code> <em>$("#button").click(doMouseClick); <br>$("#button").mouseenter(doMouseEnter);<br>$("#button").mouseleave(doMouseLeave);</em></code>
+    Note that jQuery does not use camel case.
+    </div>
+    </section>
+    
+    <section>
+    <h2>Edit DOM</h2><div class="cover">Add/remove elements to your DOM tree!</div>
+    <div class="details">We can add or remove elements to our DOM tree!
+
+        <code>
+        <ul><li><em>.append(&lt;element&gt;)</em> - will add price variable as the last child of targeted element. I.E. <em>$('.vacation').append(price);</em> - will add the variable price as the last child of an element with a vacation class.</li>
+        <li><em>.prepend(&lt;element&gt;)</em> - will add price variable as the first child of targeted element.</li>
+        <li><em>.after(&lt;element&gt;)</em>- will add a node after the selected element. I.e. <em>$('.vacation').after(price);</em> will add the variable price after an element with the vacation class. Variable price will be a sibling of .vacation and not a child.</li>
+        <li><em>.before(&lt;element&gt;)</em> - will add a node before the selected element. I.e. <em>$('.vacation').before(price);</em> will add the variable price before an element with the vacation class.</li></ul></code>
+        
+        There is another way to code these lines which some folks think is more readable
+        <code><ul>
+        <li><em>.appendTo(&lt;element&gt;)</em></li>
+        <li><em>.prependTo(&lt;element&gt:) </em></li>
+        <li><em>.insertAfter(&lt;element&gt:) </em></li>
+        <li><em>.insertBefore(&lt;element&gt:) </em></li>
+        </ul>
+        <br>The syntax would be: <em>var.appendTo($('element tag'));</em></code>
+                
+        <strong>How to remove nodes from DOM</strong>
+        
+        <code><em>$('button').remove();</em> - will remove any element with a button class from the DOM.
+        </code>
+		Note the HTML code is a string. So we can place a variable or a string or a combo of both. I.e. "&lt;span&gt;This tag " + thisVar + "&lt;span&gt;"<br><br>
+        Also note, just like in a HTML doc, we have to close the tags!    
+    </div>
+    </section>
+    
+    <section>
+    	<h2>Prevent Default</h2><div class="cover">In order to prevent default HTML actions use this!</div><div class="details">So for example if we want to make something happen via jQuery and we're using an a tag to make it happen we don't want the default action to occur. I.e.
+        <code>&lt;a href="#mouseAction"&gt; - the browswer will by default move to the tag with the mouseAction id</code>
+        This isn't what we want. So instead we must place this into our function that is excuted with the target tag is clicked.
+        <code>function mouseAction(e){<br>
+        &nbsp;&nbsp;&nbsp;<em>e.preventDefault();</em><br>
+        });<br>
+        <br>
+        $("#flights a").bind("click", mouseAction);</code>
+        "e" is the event that is passed through into the function, in this case it would a mouse click. The preventDefault(); function will stop the browser from moving to the tag with mouseAction id tag.
+        </div>
+     </section>
+    
+    <section>
+    	<h2>bind();</h2><div class="cover">Add multiple event listeners to a specific element at once.</div>
+        <div class="details">Instead of writing a whole bunch of lines to add multiple listeners to a button we can combine everything into a few lines.
+        <code>$("#button").click(buttonClick);<br>
+        $("#button").mouseenter(mouseEnter);<br>
+        $("#button").mouseleave(mouseLeave);<br><br>
+        
+        We can conver this to:<br>
+        $("#button")<em>.bind({<br>
+        &nbsp;&nbsp;&nbsp;click: buttonClick,<br>
+        &nbsp;&nbsp;&nbsp;mouseenter: mouseEnter,<br>
+        &nbsp;&nbsp;&nbsp;mouseleave: mouseLeave<br>
+        });</em>
+        </code>
+        
+        To unbind or disable the listeners, simply use:
+        <code>$("#button")<em>.unbind(click, buttonClick);</em> - this will disable click.</code>
+        
+        An easier way of unbinding all the events would be to <strong>NameSpace</strong> all of the events.<code>click<em>.nameSpaceName</em></code>
+        So instead of identifing click or mouseenter we can put
+        <code>.unbind(<em>".nameSpaceName"</em>);</code>
+        </div>
+        </section>
+        
+        <section>
+        <h2>delegate();</h2><div class="cover">Similar to bind, but instead it constantly looks for a tagin a certain element</div><div class="details">So bind will only look for the tag once jQuery is loaded. When you're using dynamic pages things will refresh constantly without reloading the page/DOM. Thus bind will not work with dynamic information. Instead use the delegate() function to constantly be on a look out for the tag to attach actions to.
+        <code>$("#tabs div")<em>.delegate("#flights a", "click", selectFlight);</em></code>
+       	This will constantly look for the correct tag only in the specified element. In this case only in the #tabs div elements.<br><br><br>
+		There is another route which is the live() function. The major issue with this fucntion is that it will look through the entire document rather than just a few elements. This takes up more resources than necessary. Also live cannot be method chained.</div>
+        </section>
+
+</article>
+
+<article id="ajax">
+<div class="headline"><header><h1>Ajax</h1></header></div>
+<!----------------------START OF SECTIONS---------------------------->     
+</article>
+
+
+<article id="Ruby">
+<div class="headline"<header><h1>Ruby</h1></div>
+<!---------------------START OF SECTIONS------------------------------------>
+<section>
+	<h2>Ruby Start!</h2><div class="cover">What to place at the top of a Ruby file</div>
+    <div class="details">
+    There are 3 lines that are sometimes need to start a Ruby doc.
+    
+    <code><pre>
+    <em>#!/usr/bin/ruby -w</em> = shebang comment (to tell UNIX-like operating system how to execute it.) Required!
+    <em># -*- coding: utf-8 -*-</em> = Tells the editor/interpreter which character set to expect
+    <em>require 'socket</em> = list of any required documents outside of the current doc. I.e Load other ruby files.
+    </pre></code>
+    </div>
+
+</section>
+
+
+<section>
+	<h2>Comments</h2><div class="cover">Learn how to do single/multi line comments</div>
+    <div class="details">
+    <code><pre>
+    <em>#</em>Single line comment
+    
+    <em>=begin</em>
+    A whole paragraph of comments
+    can go
+    right in here
+    <em>=end</em>
+    
+    CODE
+    </pre></code>
+    
+    =begin =end should be on lines by themselves. 
+    
+    </div>
+
+</section>
+
+
+<section>
+	<h2>puts/prints</h2><div class="cover">Learn the difference between the two.</div>
+    <div class="details">
+    Both "print" something on screen but the difference is that puts has a breakline after whatever you place.
+    <code><pre>
+    <em>print "howdy "
+    puts "ho"
+    print "Aloha "
+    print "kakou"</em>
+    
+    Outcome:
+    howdy ho
+    Aloha kakou</pre></code>
+    Note that there are no parenthesis or semicolons. If we add /n to print, it will print a new line. Hence print + /n = puts<br><br>
+    A shortcut to puts is using <strong>p</strong>. <strong>p</strong> will also return a more programmer friendly result.
+    <code><pre>
+    array = [1, 2, 3]
+    
+    puts array #=&gt;
+    	1
+        2
+        3
+    
+    p array #=&gt; [1, 2, 3]
+    </pre></code>
+    </div>
+</section>
+
+<section>
+	<h2>string methods</h2><div class="cover">Learn things you can do with strings =)</div>
+    <div class="details">
+    <strong>length</strong><br>
+    Finds the length of a given string.
+    <code><pre>
+    "Bob"<em>.length</em>
+    
+    Output: 3</pre></code>
+    
+    <strong>reverse</strong><br><br>
+	reverses the string. No way!
+    <code><pre>
+    "Sally".reverse
+    
+    Output: yllaS
+    </pre></code>
+    
+    <strong>upcase/downcase/capitalize</strong><br>
+    Sets the casing for a certain string.
+    <code><pre>
+    "sally"<em>.upcase!</em>
+    "Bobby"<em>.downcase!</em>
+    "danger"<em>.capitalize!</em>
+    
+    Output: SALLY bobby Danger
+    </pre></code>
+    
+    <strong> ! Note</strong> When applying string methods in Ruby, it will copy the string apply the method and return the copy. Thus the new version is never really saved in the variable. Thus in order to do that we add an <strong>!</strong> which will erase the original and save the changed version.<br><br>
+    <strong>Work Around</strong><br>
+    I came across a problem via codecademy.com. We asked the user which state she was from. If she types in the abbreviation already capitalized Ruby would return a nil value. If there is no changes made when a upcase! or downcase! is called the method will return a nil (similar to null).
+    <code><pre>
+    state = gets.chomp.upcase!
+    
+    USER = HI
+    
+    print state
+    
+    OUTPUT = nil</pre></code>
+    
+    So instead we can break this up into 2 lines.
+    <code><pre>
+    state = gets.chomp
+    <em>state.upcase!</em> This line will only replace the original value only if the copy is not a nil. If it is a nil then the original will not be distrub. Since upcase! ONLY returns a nil when the string is already upcased this will act as our checker.
+    </pre></code>   
+    </div>
+</section>
+
+
+<section>
+<h2>Parallel Assignments</h2><div class="cover">Assign more than one variable to different values</div>
+<div class="details">
+	<code><pre>
+    Instead of
+    a = 1
+    b = 2
+    c = 3
+    
+    We can use
+    
+    <em>a, b, c = 1, 2, 3</em>
+    </pre></code>
+</div>
+</section>
+
+
+<section>
+	<h2>gets / chomp</h2><div class="cover">gets is the command to get input from users</div>
+    <div class="details">
+    gets ask for users for input which then we store into a variable.
+    <code><pre>
+    print "What's your name?"
+    name = <em>gets</em>.chomp
+    </pre></code>
+    
+    gets automatically creates a newline after each input. <strong>chomp</strong> gets rid of that new line. Our program will work just fine without chomp but we'll have extra blank lines everywhere. So...
+    
+    <code><pre>
+    Say our input was Sally
+    
+    print gets
+    print "2nd line"
+    
+    Outcome:
+    Sally
+    2nd line
+    
+    print gets<em>.chomp</em>
+    print "2nd line"
+    
+    Outcome:
+    Sally2ndline
+    </pre></code>
+    
+    I wonder if chomp is a method of all string objects...
+    </div>
+
+
+</section>
+
+<section>
+	<h2>String Variables</h2><div class="cover">create and call variables</div>
+    <div class="details">
+    Unlike js and other languages it's easier to create insert variables.
+    <code><pre>
+    good_Gorilla = "Amy"
+    print "We took <em>#{good_Gorilla}</em> to the zoo"
+    
+    Output:
+    We took Amy to the zoo
+    </pre></code>
+    </div>
+</section>
+
+<section>
+	<h2>if else</h2><div class="cover">Learn if else Ruby style!</div>
+    <div class="details">
+        Basically like other programming languages with a couple twerks.
+    <code><pre>
+    <em>if</em> true
+        puts "it is true!"
+    <em>elsif</em>
+        puts "maybe?"
+    <em>else</em>
+        puts "it is false!"
+    <em>end</em>
+    </pre></code>
+        Notice there are no parenthesis or curly braces. <strong>else if</strong> is typed <strong>elsif</strong> Only the FIRST e in else. Also note to end the if statement we have to place in the word end. Ruby <strong>ignores</strong> white spaces, but it's convention to place 2 space to indent things. I'll use tab until told otherwise.
+        <br>
+        <strong>Short hand version</strong>
+        <code>
+        run this code <em>if boolean</em>
+        </code>
+        run this code will run only if the boolean is true<br><br>
+        <strong>Ternary conditional expression</strong><br>
+		Basically one line: if/else statement
+        <code>
+        puts 3 < 5 <em>? "true" : "false"</em>
+        </code>
+        This line can be read: "if 3 is less than five run true, else run false" The order of the expressions is important.<br>
+        puts [condition] ? if true run this : if false run this
+    </div>
+</section>
+
+
+
+<section>
+	<h2>unless</h2><div class="cover">The opposite of if</div>
+    <div class="details">
+    Unless is pretty much the opposite of if.
+    <code><pre>
+    hungry = false
+    
+    <em>unless hungry</em>
+    	puts "I'm writing Ruby programs!"
+	else
+    	puts "Time to eat!"
+	</pre></code>
+    
+    Code after unless will only run if the statement is FALSE. If it is true it will run else. Unless does not have the option to chain. I.e. elsif does not work.<br><br>
+    Just like if, shorthand version works as well.
+    <code>
+    run this code <em>unless boolean</em> #=&gt; code will run if boolean is false.
+    </code>
+    
+    </div>
+</section>
+
+<section>
+	<h2>include?</h2><div class="cover">A search function for strings</div>
+    <div class="details">Say we're looking to see if a lorem is in a paragraph.
+    <code><pre>
+    our_paragraph = "Lorem ipsum is a space holder"
+    
+    print our_paragraph<em>.include? "Lorem"</em>  #this will return true
+    </pre></code>
+    
+    <strong>?</strong> normally returns a boolean. Notice that the string is case-sensitive. .include, without the ? will not work.
+    
+    </div>
+</section>
+
+<section>
+	<h2>.gsub</h2><div class="cover">Change string</div>
+    <div class="details">
+    We can change a part of a string or the words in a string.
+    <code><pre>
+    our_p = "lorem ipsum"
+    
+    our_p<em>.gsub!(/lorem/, 'Lorem')</em>
+    </pre></code>
+	
+    Takes regular expression (<strong>which we have not yet covered</strong>). Also note the replace text must be in SINGLE quotes.
+   </div> 
+</section>
+
+<section>
+	<h2>while / until</h2><div class="cover">while and until loops!</div>
+    <div class="details">
+    <strong>while</strong>
+    Much like the other while loops.
+    <code><pre>
+    boo = true
+    
+    while boo
+    	run this code
+        boo = false
+    end
+    </pre></code>
+   	The while loop will run until the boolean turns false.<br><br>
+    <strong>until</strong><br>
+    Complete opposite of while. Until will run the code so long as the boolean is false.
+    <code><pre>
+    boo = false
+    
+    until boo
+    	run this code
+        boo = true
+    end
+    </pre></code>
+    
+    Just like all other loops, be sure to it doesn't run forever. End cannot be replaced with curly braces.
+    
+    </div>
+</section>
+
+<section>
+	<h2>for loops</h2><div class="cover">for loops Ruby style!</div>
+    <div class="details">
+    If you know the number of times you'd like to run a loop...
+    <code><pre>
+    for num in 1...10
+    	puts num
+	end
+    </pre></code>
+    This code counts from 1-9<br>
+    ... means exclude the last number, in our case, 10<br><br>
+    .. means include the last number. Our output would have included 10.<br><br>
+    nums is just a generic variable, could be replaced with anything.
+    
+    </div>
+</section>
+
+<section>
+	<h2>Range</h2><div class="cover">Iterate between values</div>
+    <div class="details">
+    Set a range to count values. Either alphabetical or numbers.
+    <code><pre>
+    <em>(1..5)</em> #=&gt; counts from 1-5
+    <em>(1...5)</em> #=&gt; counts from 1-4 ... excludes the last number.
+    <em>("a".."z")</em> #=&gt; alphabet from a-z
+    
+    <em>array = (1..5).to_a</em> #=&gt; creates a variable array[1, 2, 3, etc..]
+    puts <em>array[0..-1]</em> #=&gt; Will put out every single value of the array.    
+    </pre></code>
+    
+    What (0..-1) mean I have not clue. My guess 0-infinity? But this only works when used in arrays or strings. Normally ranges have to begin with low to high. (0..any other negative number) does not work.
+    </div>
+    
+</section>
+
+<section>
+	<h2>Upto / Downto</h2><div class="cover">Much like range counting up/down</div>
+    <div class="details">
+    	Upto counts from a low number up to a high number. The opposite is true for downto.
+        <code><pre>
+        <em>2.upto(5) { |i| puts i }</em> #=&gt; counts from 2-5
+        
+        <em>"Z".downto("A") { |i| puts i }</em> #=&gt; lists Z - A        
+        </pre></code>
+        
+        This is meant to be a substitute for the for loop.
+    </div>
+</section>
+
+<section>
+	<h2>loop (Ruby)</h2><div class="cover">Loop Ruby style!</div>
+    <div class="details">
+    Another way to loop blocks of code is by using the method loop.
+    <code><pre>
+    i = 1
+    <em>loop</em> do
+    	i += 1
+        puts "#{i}"
+        break if i <= 10
+	end
+    </pre></code>
+    
+    A couple of things:<br>
+    <strong>do/end vs { }</strong> these are interchangable. Thus we can write loop { block of code } instead of loop do block of code end<br><br>
+    <strong>break if i &lt;= 10</strong> is a single line command. Notice how we do not need end at the end of if. This is how to stop the loop. As soon as the condition is met the loop ends.
+    </div>
+</section>
+
+<section>
+	<h2>next (in loop)</h2><div class="cover">Skips a step in the loop</div>
+    <div class="details">
+    Say we're only interested in displaying only even numbers.
+    <code><pre>
+    i = 1
+    loop {
+    	i += 1 
+    	<em>next if i % 2 != 0</em> (false when even, true when odd)
+        print "#{i}"
+        break if i <= 10
+    }
+    </pre></code>
+	If the next condition is met, the loop breaks and tries again. NOTE if the increment is after the next command, the loop will become infinite since no changes are being made.
+    </div>
+</section>
+
+<section>
+	<h2>arrays</h2><div class="cover">Ruby arrays and how to loop through them</div>
+    <div class="details">
+    How to create an array:
+    <code>
+    array = [1, 2, 3, 4]
+    </code>
+    
+    How to loop through each element:
+    
+    <code><pre>
+    array<em>.each do |X|</em>
+    	x += 10 #increases each number by 10
+    end
+    </pre></code>
+    
+    Each is actually a method of the object class, thus it can be applied to objects as well as arrays. We can use &amp; and | to join or remove elements in the array.
+    
+    <code><pre>
+a = [1, 1, 2, 2, 3, 3, 4]
+b = [5, 5, 4, 4, 3, 3, 2]
+a <em>|</em> b #=> [1, 2, 3, 4, 5] # duplicates are removed
+b <em>|</em> a #=> [5, 4, 3, 2, 1] # duplicates are removed but order is backward.
+a <em>&amp;</em> b #=> [2, 3, 4] # elements that are in both arrays are kept.
+b <em>&amp;</em> a #=> [4, 3, 2]
+    </pre></code>
+    
+    The statements can be read, elements in a or(|) elements in b. And, elements in a and(&amp;) elements in b. <strong>NOTE</strong> There is no real guarrentee that the order will be precise.
+    
+    </div>
+
+
+</section>
+
+<section>
+	<h2>pop()</h2><div class="cover">Return last element in array</div>
+    <div class="details">
+    	This function is very simple. It returns the last element in the array.
+        <code>
+        array = [1, 2, 3] <br>
+        puts array.<em>pop()</em> = 3
+        </code>
+    </div>
+</section>
+
+<section>
+	<h2>.push</h2><div class="cover">How to add to arrays</div>
+    <div class="details">
+    	Just like in JS
+        <code><pre>
+       	<em>array.push</em> = "value" #=&gt; Will add "value" to the last index
+        array[5] = "value #=&gt; Will assign array[5] to "value" even 
+        if has already been assigned to something else.
+        
+        Shorthand
+        <em>array &lt;&lt;</em> "value"
+        </pre></code>
+    </div>
+</section>
+
+<section>
+	<h2>.times</h2><div class="cover">Better version of the for loop</div>
+    <div class="details">
+    Instead of creating complex equations we can simply type a number followed by times and do a code of block.
+    <code><pre>
+    10.times {
+    	print "chunky bacon"
+    }</pre></code>
+    
+    
+    </div>
+</section>
+
+<section>
+	<h2>.split</h2><div class="cover">Turns a string into an array</div>
+    <div class="details">
+    There are a couple of pieces to this code. First is which string and second is where do you want the breaks to occur?
+    <code><pre>
+    p = "Lorem ipsum etc"
+    
+    array = p<em>.split(" ")</em>
+    
+    Results: array["Lorem", "ipsum", "etc]
+    </pre></code>
+    
+    </div>
+
+</section>
+
+
+<section>
+<h2>.sort</h2><div class="cover">Organize arrays in a certain order.</div>
+<div class="details">Like other commands the ! is so that it overwrites the original copy.
+<code><pre>
+array = [5, 2, 3, 4, 1]
+
+<em>array.sort! #=&gt; 1, 2, 3, 4, 5</em>
+</pre></code>
+
+This also works with strings. We can reverse it by
+
+<code><pre>
+<em>array.reverse!</em>
+
+or
+
+array.sort! <em>{|a, b| b &lt;=&gt; a}</em> I suppose this sets the order of things. Not quite sure.
+
+</pre></code>
+</section>
+
+
+
+<section>
+	<h2>&lt;=&gt;</h2><div class="cover">Find out the order of two values</div>
+	<div class="details">This is almost like a boolean except this returns 3 different results instead of only two.
+    <code><pre>
+    <em>1 &lt;=&gt; 3 </em> = -1 is returned if the 1st value is lower
+    <em>1 &lt;=&gt; 1 </em> = 0 is returned if both values are equal
+    <em>2 &lt;=&gt; 1 </em> = 1 is returned if the 1st value is higher
+    </pre></code>
+    
+    Basically it returns where the lower value is in comparison to &lt;=&gt;
+    </div>
+</section>
+
+<section>
+<h2>sort_by</h2><div class="cover">How to sort hashes</div>
+<div class="details">
+It is very similar to array sorts except there are two variables.
+<code>
+hash.sort_by {|key, value| key}
+</code>
+
+Thus hash will be sorted by it's keyes and not by it's value. Thus alphabetizing it's keys. Key and value could be named anything.
+</div>
+</section>
+
+<section>
+	<h2>hashes</h2><div class="cover">Just like JS objects =)</div>
+    <div class="details">
+    Just like JS objects, we can store any sort of data in hashes indexed by keys.
+    <code><pre>
+    <strong>Hash Literal Notation</strong>
+    my_has = {
+    	"key1" <em>=&gt;</em> value1
+        "key2" <em>=&gt;</em> value2
+        "key3" <em>=&gt;</em> value3
+    }
+    
+    Other way:
+    my_has = <em>Hash.new</em>
+    my_has["key1"] = value1
+    
+    </pre></code>
+	
+    =&gt; assigns the keys to it's values. Hash in Hash.new has to be capitalized.<br><br>
+    How to set symbols as keys instead of strings:
+    <code><pre>
+    	<strong>Ruby 1.9</strong>
+    	key1: value1,
+        key2: value2
+        
+        or
+        
+        <strong>Ruby 1.8 and earlier</strong>
+        :key1 => value1,
+        :key2 => value2
+    </pre></code>
+    
+    <code><pre>
+    <strong>Setting default values</strong>
+  	h = Hash.new<em>("default value")</em>
+    </pre></code>
+
+    
+    </div>
+</section>
+
+
+
+<section>
+	<h2>.each</h2><div class="cover">How to loop over hash and arrays</div>
+    <div class="details">
+    Loop over hashes by creating 2 variables, one for the key the other for the value.
+    <code>
+    hash.each { |key, value| puts "#{key}: #{value}" }
+    </code>
+    Which results in key: value.<br>
+    To loop over array values it's the same except we only have to create a variable for the value.
+    <code>
+    array.each { |value| puts value }
+    </code>
+    This will output every value of the array.
+    </div>    
+</section>
+
+<section>
+	<h2>! ?</h2><div class="cover">Method naming conventions</div>
+    <div class="details">
+    <code><pre>
+    method<em>!</em> = beware something different is going to happen.
+    
+    method<em>?</em> = this method returns a boolean.
+    </pre></code>
+    <strong>!</strong>, the only thing I learned thus far is if we execute any method, the method returns a copy and does not change the original value of the variable. If we add ! to the end of the method then the value of the variable is changed to the result of the method.
+    <code><pre>
+    array = [1, 2, 3]
+    
+    array.reverse #=&gt; 3, 2, 1
+    
+    puts array #=&gt; 1, 2, 3
+    
+    array.reverse! #=&gt; 3, 2, 1
+    
+    puts array #=&gt; 3, 2, 1
+    </pre></code>
+    </div>
+</section>
+
+
+
+
+
+
+<section>
+<h2>methods</h2><div class="cover">Covers how to create one</div>
+<div class="details">
+Syntax:
+<code><pre>
+<em>def nameOfMethod(parameters)</em>
+	block of code.
+<em>end</em>
+</pre></code>
+
+Note that it ends with "end". Curly braces do not work in this case.
+</div>
+</section>
+
+<section>
+<h2>Multiple parameters</h2><div class="cover">Pass multiple parameters of the same type</div>
+<div class="details">
+For example you might want to say hello to a few friends.
+<code><pre>
+def what_up(greeting, <em>*</em>bros)
+	bros.each { |bro| puts "#{greeting}, #{bro}!" }
+end
+
+what_up("What up", "Justin", "Ben", "Kevin")
+</pre></code>
+
+My assumption is that the * parameter has to be at the end. bros is automatically made into an array.
+
+</div>
+</section>
+
+
+<section>
+    <h2>method return</h2><div class="cover">Return something from a method</div>
+        <div class="details">
+        Sometimes we want a method to return an answer to a question or something along those lines.
+        <code><pre>
+        def cube(n)
+            <em>return</em> n ** 3
+        end
+        </pre></code>
+        
+        ** = Exponential<br>
+        If we are using puts to relay the return use it just like a variable.
+        <code><pre>
+        def sample(word)
+            return word
+        end
+        
+        puts "like this? <em>#{sample("Nice!")}</em>"
+        
+        output: like this? Nice!
+        </pre></code>
+        
+        If there is no return value Ruby will default and return the last expression in the method. Thus even if we didn't have <em>return</em> word it will still have returned word.
+        
+        <code><pre>
+        def sample(word)
+        	<em>word</em>
+        end
+        </pre></code>
+        
+        Will still return word.
+    
+    </div>
+</section>
+
+<section>
+	<h2>case</h2><div class="cover">Like switch for JS</div>
+    <div class="details">
+    	Simple:
+        <code><pre>
+        <em>case</em> variable
+            <em>when</em> "variable is met"
+            	execute this code
+            <em>when</em> "variable meets this"
+            	execute this code
+            <em>else</em> #like default
+             	execute this code
+            <em>end</em>
+        </pre></code>
+        
+        Shorthand version, which honestly I don't know when I'll use because it can get cluttered quite quickly...ironically enough
+        <code>
+        when "condition is met" <em>then run this code</em>
+        </code>
+    </div>
+</section>
+
+<section>
+	<h2>symbols</h2><div class="cover">Objects with names?</div>
+    <div class="details">
+    	Honestly haven't really wrapped my head around this one. Here are some resources in case this doesn't make any sense.
+        <ol>
+        	<li><a href="http://www.youtube.com/watch?v=mBXGBbEbXZY">24 min YouTube video, very helpful</a></li>
+            <li><a href="http://www.robertsosinski.com/2009/01/11/the-difference-between-ruby-symbols-and-strings/">A blog post showing how symbols save memory space. Can't understand the rest.</a></li>
+            <li><a href="http://www.randomhacks.net/articles/2007/01/20/13-ways-of-looking-at-a-ruby-symbol">Short 13 ways to look at Symbols</a></li>
+        </ol><br>
+        Let's go into syntax:
+        
+        <code><pre>
+        <em>:symbol
+        :"symbol"</em>
+        
+        In hash:
+        hash = {
+            <em>key: value1
+            :key2 =&gt; value 2</em>
+        }
+        
+        Conversions:
+        "symbol"<em>.to_sym</em> OR "symbol"<em>.intern</em> = String to Symbol
+        :symbol<em>.to_s</em> = Symbol to String
+  		</pre></code>
+        
+      	Symbols are similar to variables. In fact variables are symbols. Once a symbol is created it's name cannot be changed, though it's value can. IE hash[:key] = "some other value" is valid. But unlike strings we cannot add or take away from it.
+        
+        <code><pre>
+        string = "hello"
+        string &gt;&gt; ", world" #=&gt; will change string to = "hello, world"
+        
+        string2 = :hello
+        string2 &gt;&gt: ", world" #=&gt; will result in error
+        </pre></code>
+            
+        In the 2nd case we're assigning an object (string2) to another object (:hello) thus we can't attach a string to it.
+        </div>    
+</section>
+
+<section>
+	<h2>delete key</h2><div class="cover">Delete a key from a hash</div>
+    <div class="details">
+    	Delete a key and it's value from a hash.
+        <code><pre>
+        hash = {
+        	first: 1
+            second: 2
+        }
+        
+        hash<em>.delete(:first)</em> #=&gt; will result in deleting the key first.
+        </pre></code>
+        
+        Note that if the keys were represented by a string it would have been delete("first") instead.
+    </div>
+</section>
+
+<section>
+	<h2>respond_to?</h2><div class="cover">Checks to see if an object has a method in it</div>
+    <div class="details">
+    	My guess this is more for troubleshooting than anything else.
+        <code><pre>
+        myAge = 24
+        
+        myAge<em>.respond_to?(:next)</em> #=&gt; results in true
+        </pre></code>
+        
+        next is a method which returns the next integer. In our case, 25. Notice how (:next) is a symbol.
+	</div>
+
+</section>
+
+<section>
+	<h2>||=</h2><div class="cover">Conditional Assignment, i.e. assign only if variable is nil</div>
+    <div class="details">
+    	<code><pre>
+        Instead of using
+        prime_array = [] if prime_array.nil?
+        
+        use
+        prime_array <em>||=</em> []
+        </pre></code>
+        prime_array will only be assigned to [] if it is nil to begin with. If there is something in the array, nothing will be done.
+    </div>
+
+</section>
+
+<section>
+	<h2>collect / map</h2><div class="cover">Executes a code on each element in the array.</div>
+    <div class="details">
+    	Executes a piece of code on each element. It seems it's mostly only for numbers.
+        <code><pre>
+        nums = [1, 2, 3]
+        
+        nums<em>.collect</em> = { |x| x ** 2 } #=&gt; 1, 4, 9
+        </pre></code>
+        
+        This won't overwrite nums. Instead it will only return the result. To overwrites nums, we would use collect! <strong>map</strong> does the exact same thing.
+    </div>
+</section>
+
+<section>
+	<h2>block</h2><div class='cover'>Block is a bunch of code between {}</div>
+    <div class="details">
+    A block is just a bit of code between do..end or {}. It's not an object on its own, but it can be passed to methods like .each or .select.
+    
+    <code><pre>
+    array = [1, 2, 3]
+    
+    array.each <em>{|x| x * 2} #=&gt; multiplies each element by 2.</em>
+    </pre></code>
+    </div>
+
+</section>
+
+<section>
+    <h2>yield</h2><div class="cover">Pass blocks into methods/functions</div>
+    <div class="details">
+    	Okay let's be clear that yield is still kind of fuzzy. Mostly because I have no clue why/how you would use it. Basically you can pass blocks into methods/functions just like a parameter.
+        <code><pre>
+        def double(param)
+            <em>yield param</em>
+        end
+        
+        <em>double(4) {|x| x * 2 }</em>
+        </pre></code>
+               
+    </div>
+</section>
+
+<section>
+	<h2>proc / lambdas</h2><div class="cover">Save a "block" with different Restrictions</div>
+    <div class="details">
+    	<strong>Proc</strong><br>
+    	Save a block {} so we can re-use it again and again.
+        <code><pre>
+        <em>cube = Proc.new { |x| x ** 3 }</em>
+        
+        [1, 2, 3].collect!(<em>&amp;</em>cube) # ==> [1, 8, 27]
+        [4, 5, 6].map!(<em>&amp;</em>cube) # ==> [64, 125, 216]
+        </pre></code>
+        
+        Similar to a function/method. We have to use the &amp; before the name to indicate that it is a block. It also has to be used only when expecting a block. <strong>Note</strong> when you call the proc, we use () instead of curly braces. It doesn't even have to be a block it can be a simple puts command. We use the <strong>.call</strong> command to call it.
+        <code><pre>
+        sample = Proc.new {puts "Hello"}
+        
+        sample<em>.call</em> #=&gt; Hello
+    	</pre></code>
+        
+        So does this replace method/functions?<br><br>
+        <strong>Simplify blocks in procs</strong><br>
+        We can use &amp; instead of |x| to do things to each element in an array etc.
+        <code><pre>
+        numbers_array =  [1, 2, 3]
+        
+        strings_array1 = numbers_array {|x| x.to_s} #=&gt; "1", "2", "3"
+        
+        strings_array2 = numbers_array(<em>&amp;:</em>to_s) #=&gt; "1", "2", "3"
+        </pre></code>
+        
+        &amp; = |x| and x or do this to each element in the array. <strong>Note</strong> when using the &amp; we use parenthesis () rather than curly braces like how we use in blocks. Also is_a? does not work. Not sure why. Maybe only conversions work with &amp;:? Even in Lambdas, we must use parenthesis instead of curly braces. <br><br>
+        
+        <strong>Lambda</strong><br>
+        Same as a Proc with some exceptions:
+        <ol><li>A lambda checks the number of arguments passed to it, while a proc does not. This means that a lambda will throw an error if you pass it the wrong number of arguments, whereas a proc will ignore unexpected arguments and assign nil to any that are missing.</li>
+        <li>Second, when a lambda returns, it passes control back to the calling method; when a proc returns, it does so immediately, without going back to the calling method.</li></ol>
+        
+    </div>
+
+</section>
+
+
+<section>
+    <h2>.select</h2><div class="cover">Sorts through an array and only selects if the block returns true</div>
+    <div class="details">
+    Will return anything that the block returns as true.
+    <code><pre>
+    group_1 = [4.1, 5.5, 3.2, 3.3, 6.1, 3.9, 4.7]
+    
+    over_4_feet = Proc.new { |height| height >= 4 }
+    
+    can_ride_1 = group_1.<em>select</em>( &amp;over_4_feet ) =#&gt; 4.1, 5.5, 6.1, 4.7
+ 	</pre></code>   
+    </div>
+</section>
+
+<section>
+    <h2>class</h2><div class="cover">How to create class</div>
+    <div class="details">
+    <code><pre>
+    <em>class Name
+    	def initialize(attributes)
+        	@attributes = attributes
+        end
+    end</em>
+    </pre></code>
+    <strong>initialize</strong> basically runs once the class becomes created. Attributes are properties passed into the class. For instance if we had a class named bird, lays egg would set to true, etc.
+    
+    </div>
+
+</section>
+
+<section>
+	<h2>pub/priv variables</h2><div class="cover">Different types of variables, what they do and how to create them.</div>
+    <div class="details">
+    <code><pre>
+    Global
+    var = "variable"
+    <em>$</em>var = "variable"
+    
+    Instance variables
+    <em>@</em>var = "variable
+    
+    Class variables
+    <em>@@</em> var = "variable
+    </pre></code>
+    
+    Instance variables can only be manipulated via instances. Class variables can be modified/updated by any instance even new ones. I.e.
+    
+    <code><pre>
+    class Person
+    	counter = 0
+    	def initialize
+            <em>@@</em>counter += 1
+        end
+    end
+    
+    Jerry = Person.new
+    Tom = Person.new #=&gt; counter = 2                
+    </pre></code>
+    </div>
+</section>
+
+<section>
+	<h2>Inheritance</h2><div class="cover">Inherit methods and variables from other classes</div>
+	<div class="details">Back to our birds/penguin example.
+    <code><pre>
+class Bird
+	def initialize
+    	@laysegg = true
+    end
+    
+    attr_accessor :laysegg
+end
+
+class Penguin <em>&lt;</em> Bird
+end
+
+wally = Penguin.new()
+wally.laysegg #=> true
+    </pre></code>
+    
+    <strong>attr_accessor</strong> allows us to access variables in instances. attr_writer/attr_reader is write/read respectively. We can overwrite methods by simply rewriting them and we can call the original method by using the <strong>super</strong> keyword.
+    
+    <code><pre>
+    class Human
+    	def fight
+        	puts "throws punch"
+        end
+    end
+    
+    class Warrior &lt; Human
+    	def fight
+        	puts "Swings sword"
+            <em>super()</em> #=> puts "throws punch"
+        end
+    end
+    
+    Stark = Warrior.new
+    Stark.fight
+    
+    Output:
+    Swings sword
+    throws punch
+    </pre></code>
+    If we do not add super, warrior's method fight will replace human's fight. 
+    </div>
+</section>
+
+<section>
+	<h2>Use of ;</h2><div class="cover">Semicolon is used to shorten multi-line codes</div>
+    <div class="details">
+    	<code><pre>
+        Instead of:
+        def func
+        end
+        
+        We can write...
+        def func<em>;</em> end
+        </pre></code>
+        Saves time and effort especially when creating blank functions etc. Like initialize!
+    </div>
+</section>
+
+<section>
+	<h2>time</h2><div class="cover">Ruby tells time!</div>
+    <div class="details">
+    How to access current time.
+    <code>
+    time = <em>Time.now</em>
+    </code>
+    </div>
+</section>
+
+<section>
+	<h2>Pub / Priv methods</h2> <div class="cover">Define private/public methods</div>
+    <div class="details">
+    Private methods can only be accessed from within a class and not via instance.
+    <code><pre>
+    class Person
+      def initialize(name, age)
+        @name = name
+        @age = age
+      end
+      
+      <em>public</em>    # This method can be called from outside the class.
+      
+      def about_me
+        puts "I'm #{@name} and I'm #{@age} years old!"
+      end
+      
+      <em>private</em>   # This method can't!
+      
+      def bank_account_number
+        @account_number = 12345
+        puts "My bank account number is #{@account_number}."
+      end
+    end
+    
+    eric.bank_account_number = ERROR
+    </pre></code>
+    Basically anything after public or private is deemed that until it's changed otherwise. It's probably wise to place all public methods first then set private methods since by default it's set to public.
+    </div>
+</section>
+
+<section>
+	<h2>attr_accessor</h2><div class="cover">How to access variables in a class.</div>
+    <div class="details">
+    We cannot access variables in a class unless we define it as an attribute or create a function that allows us to access it. So of Ruby had to make it easier/shorter.
+    <code><pre>
+<em>attr_writer :age</em> # is the same as...
+
+def age=(value)
+  @age = value <em>How we would assign the age variable is instance_name.age = 27</em> 
+  # NOTE we cannot read this variable, only assign it.
+end
+
+<em>att_reader :age</em> # is the same as...
+
+def age
+  @age <em>instance_name.age = 27</em> NOTE we cannot overwrite this variable and can only read it.
+end
+
+<em>attr_accessor :age</em> # is the same as both of the above methods combined. We can assign and read age using this.
+    </pre></code>
+    
+    We can access age with dot notation. Without attr_reader/attr_accessor we would have to write a method to access the variables.<br>
+    <strong>attr_reader</strong> = read only<br>
+    <strong>attr_writer</strong> = write only<br>
+    <strong>attr_accessor</strong> = both<br>
+    This is how we can assign a password. I.e. one method takes in the password (<strong>attr_writer</strong>), assigns it to a <strong>att_reader</strong> thus we cannot access the information from outside of the class.
+    
+    </div>
+</section>
+
+<section>
+    <h2>$ @ @@</h2><div class="cover">Global, instance and class variables.</div>
+    <div class="details">
+    Ruby convention is to mark variables with these symbols to signify their scope or access level.
+    <code><pre>
+    <em>$</em>global = "global variable"
+    
+    def Class
+    	<em>@</em>instanceVar = "instance variable"
+        <em>@@</em>classVar = "class variable"
+    	...
+    end
+    
+    instance = Class.New
+    
+    <em>$</em> = Global variable. We can acess this from any part of the code.
+    
+    <em>@</em> = instance variable created in a class. We can only access this via class instance.
+    <em>instance.instanceVar</em>
+    Not Class.instanceVar
+	
+    <em>@@</em> = class variable created in a class can only be access via class.
+    <em>Class.classVar</em>
+    Not instance.classVar
+    </pre></code>
+    </div>
+</section>
+
+<section>
+	<h2>Require / Include</h2><div class="cover">Bring in a module to make life easier</div>
+    <div class="details">
+    	<strong>Require</strong><br>
+        Pull in a module to use some of the methods in it. Normally at the top of the document.
+        <code>
+        <em>require</em> 'open-uri'
+        </code>
+        
+        The difference between require and inclue is that with require the methods of the module stay within the module. I.e. to access any methods within a required module we must say module_name.method. With include we won't have to type the module name but then we come across a problem in that our function names may collide.
+    </div>
+</section>
+
+<section>
+	<h2>method()</h2><div class="cover">Capture a function. Confused? I thought so...</div>
+    <div class="details">
+    We can capture a method and then call it by using the method function. Bare with me here...
+    <code>
+    <pre>
+def play()
+  next_room = :bridge
+
+  while true
+    puts "\n_________"
+    room = <em>method(next_room)</em>
+    next_room = room.call()
+  end
+end
+    </pre>
+    </code>
+    What this does is places the function "bridge" in the variable be room. Then calls, initiates, or uses the function by using the call method (room.call()) The method/function ("bridge") then RETURNS the next function in the program that needs to be run via if statements, etc. The next function name is returned as a symbol (or string if you code sloppy), say :sick_bay. next_room is then reassigned to :sick_bay (from :bridge). The loop recycles and assigns room to :sick_bay, the next function in the program. Because while is an infinite loop, the program will run until it executes an exit.
+    </div>
+
+</section>
+
+<section>
+	<h2>Singleton Methods</h2><div class="cover">Add methods to individual objects (not symbols/fixnum/bignum)</div>
+	<div class="details">
+    We can add/modify methods to any object of our choosing! Even string/arrays/hashes anything but symbols/fixnums/bignum.
+    
+    <code><pre>
+o = "String"
+
+def <em>o.custom_func()</em>
+	puts "Code code code"
+end
+
+o.custom_func() #=> "Code code code"
+    </pre></code>
+    </div>
+</section>
+
+<section>
+    <h2>RegEx</h2><div class="cover">The fastest way to search and match strings in programming</div>
+    <div class="details">
+        We can use special characters to search for patterns and even replace them.
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Practice</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>\</td>
+                    <td>Use backslash to exit strings and enter a special character to search for. If if you're looking for 1+2, enter 1\+2 when using RegEx</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+</article>
+
+</body>
+</html>>
